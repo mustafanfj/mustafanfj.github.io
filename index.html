@@ -89,7 +89,7 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3.5rem;font:400 .9rem/1.5
   <div class="area">
     <p class="setting">From the air</p>
     <h3>Reliable perception and communication for UAVs</h3>
-    <p><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM</a> asks a small VLM the same question through several independent evidence sources, fuses them with reliability weights, and abstains when calibrated confidence is low. With no fine-tuning it adds up to 7.0 points of accuracy on FloodNet aerial VQA and removes every hallucinated "yes" on questions whose answer is no.</p>
+    <p><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM</a> asks a small VLM the same question through several independent evidence sources, fuses them with reliability weights, and abstains when calibrated confidence is low. With no fine-tuning it adds up to 7.0 points of accuracy on FloodNet aerial VQA and, for SmolVLM, cuts false "yes" answers on FloodNet from 21.8% to zero.</p>
     <p><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM</a> lets a drone send the smallest message that still lets the ground station act in time, using a 1 kB semantic alert that needs 105× fewer bytes than the best image representation.</p>
     <figure class="wide">
       <img src="images/aeroverify.jpg" width="1600" height="799" loading="lazy" alt="AeroVerify-VLM framework: data split into DEV and EVAL, four evidence views from frozen Moondream2 and SmolVLM, reliability weights fit on DEV, and a confidence-thresholded decision on EVAL.">
