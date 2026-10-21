@@ -89,8 +89,8 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3.5rem;font:400 .9rem/1.5
   <div class="area">
     <p class="setting">From the air</p>
     <h3>Reliable perception and communication for UAVs</h3>
-    <p><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM</a> asks a small VLM the same question through several independent evidence sources, fuses them with reliability weights, and abstains when calibrated confidence is low. With no fine-tuning it adds up to 7.0 points of accuracy on FloodNet aerial VQA.</p>
-    <p><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM</a> lets a drone send the smallest message that still lets the ground station act in time, cutting a 130 kB frame to a 1 kB semantic alert.</p>
+    <p><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM</a> asks a small VLM the same question through several independent evidence sources, fuses them with reliability weights, and abstains when calibrated confidence is low. With no fine-tuning it adds up to 7.0 points of accuracy on FloodNet aerial VQA and removes every hallucinated "yes" on questions whose answer is no.</p>
+    <p><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM</a> lets a drone send the smallest message that still lets the ground station act in time, using a 1 kB semantic alert that needs 105× fewer bytes than the best image representation.</p>
     <figure class="wide">
       <img src="images/aeroverify.jpg" width="1600" height="799" loading="lazy" alt="AeroVerify-VLM framework: data split into DEV and EVAL, four evidence views from frozen Moondream2 and SmolVLM, reliability weights fit on DEV, and a confidence-thresholded decision on EVAL.">
       <figcaption>AeroVerify-VLM: evidence views are weighted by their reliability on a development split, and the model abstains below a calibrated threshold.</figcaption>
@@ -135,11 +135,14 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3.5rem;font:400 .9rem/1.5
   <p class="pubgroup">Under review</p>
   <ol class="pubs">
     <li class="lead"><span class="pubtitle">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering.</span><br>
-      <strong>M. Al Juboori</strong>, M. Ur Rehman, Z. Abbas. <span class="venue">Frontiers in Marine Science</span>.<br>
+      <strong>M. Al Juboori</strong>, Z. Abbas, M. Ur Rehman. <span class="venue">Frontiers in Marine Science</span>.<br>
       <span class="plinks"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a></span></li>
     <li class="lead"><span class="pubtitle">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links.</span><br>
       <strong>M. Al Juboori</strong>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman. <span class="venue">IEEE Open Journal of Vehicular Technology</span>.<br>
       <span class="plinks"><a href="https://github.com/mustafanfj/SemUAV-VLM">Code</a></span></li>
+    <li class="lead"><span class="pubtitle">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models.</span><br>
+      <strong>M. Al Juboori</strong> et al. <span class="venue">IEEE Open Journal of Vehicular Technology</span>.<br>
+      <span class="plinks"><a href="https://github.com/mustafanfj/AeroVerify-VLM">Code</a></span></li>
     <li><span class="pubtitle">Task-oriented semantic communication for adaptive edge-cloud video vision-language model inference.</span><br>
       M. F. Nasir, <strong>M. Al Juboori</strong>, S. H. Khan, F. Ullah, M. Ur Rehman. <span class="venue">IEEE Open Journal of the Communications Society</span>.</li>
     <li><span class="pubtitle">From pixels to diagnosis: A survey of vision-language models for plant disease detection.</span><br>
