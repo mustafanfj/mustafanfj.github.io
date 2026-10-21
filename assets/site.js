@@ -1,69 +1,23 @@
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ---------- stage: the fixed half follows the reading ---------- */
-  const items = new Map([...document.querySelectorAll('.stage-item')].map(el => [el.dataset.key, el]));
-  let current = 'flood-houston';
-  function show(key) {
-    if (!key || key === current || !items.has(key)) return;
-    const prev = items.get(current);
-    items.forEach(el => el.classList.remove('is-prev'));
-    prev?.classList.replace('is-on', 'is-prev');
-    clearTimeout(show.t);
-    show.t = setTimeout(() => prev?.classList.remove('is-prev'), reduce ? 0 : 720);
-    prev?.querySelector('video')?.pause();
-    const next = items.get(key);
-    next.classList.add('is-on');
-    const v = next.querySelector('video');
-    if (v && !reduce) { v.preload = 'auto'; v.play().catch(() => {}); }
-    current = key;
-  }
-
-  const projects = [...document.querySelectorAll('.project')];
-  const openProject = () => projects.find(p => p.classList.contains('is-open'));
-  let activeSection = null;
-
-  const sectionKey = sec => {
-    if (!sec) return 'flood-houston';
-    if (sec.id === 'research') return (openProject() || projects[0]).dataset.stage;
-    return sec.dataset.stageSection;
-  };
-
-  const sections = [...document.querySelectorAll('[data-stage-section]')];
-  if ('IntersectionObserver' in window) {
-    const so = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { activeSection = e.target; show(sectionKey(activeSection)); } });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    sections.forEach(s => so.observe(s));
-    const hero = document.querySelector('.hero');
-    new IntersectionObserver(([e]) => { if (e.isIntersecting) { activeSection = null; show('flood-houston'); } },
-      { rootMargin: '-45% 0px -45% 0px' }).observe(hero);
-  }
-
-  /* ---------- research list: one open at a time ---------- */
-  projects.forEach(p => {
-    const btn = p.querySelector('.project-row');
-    const body = p.querySelector('.project-body');
+  /* ---------- selected papers: one open at a time ---------- */
+  const papers = [...document.querySelectorAll('.paper')];
+  papers.forEach(p => {
+    const btn = p.querySelector('.paper-row');
     btn.addEventListener('click', () => {
       const willOpen = !p.classList.contains('is-open');
-      projects.forEach(o => {
+      papers.forEach(o => {
         o.classList.remove('is-open');
-        o.querySelector('.project-row').setAttribute('aria-expanded', 'false');
-        o.querySelector('.project-body').hidden = true;
+        o.querySelector('.paper-row').setAttribute('aria-expanded', 'false');
+        o.querySelector('.paper-body').hidden = true;
       });
       if (willOpen) {
         p.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
-        body.hidden = false;
+        p.querySelector('.paper-body').hidden = false;
       }
-      show(p.dataset.stage);
     });
-    if (fine) {
-      p.addEventListener('pointerenter', () => show(p.dataset.stage));
-      p.addEventListener('pointerleave', () => show(sectionKey(activeSection)));
-    }
-    btn.addEventListener('focus', () => show(p.dataset.stage));
   });
 
   /* ---------- one demo per paper, every number from that paper ---------- */
@@ -176,10 +130,10 @@
   }, { rootMargin: '0px 0px -8% 0px' });
   reveals.forEach(r => ro.observe(r));
 
-  /* phone: the clip inside the note plays only while on screen */
+  /* the reef clip plays only while on screen */
   const clip = document.querySelector('.note-clip video');
   if (clip && !reduce) new IntersectionObserver(([e]) => {
-    if (e.isIntersecting && getComputedStyle(clip.parentElement).display !== 'none') { clip.preload = 'auto'; clip.play().catch(() => {}); }
+    if (e.isIntersecting) { clip.preload = 'auto'; clip.play().catch(() => {}); }
     else clip.pause();
   }).observe(clip);
   document.addEventListener('visibilitychange', () => {
