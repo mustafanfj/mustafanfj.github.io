@@ -3,188 +3,354 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mustafa Al Juboori</title>
-<meta name="description" content="Mustafa Al Juboori — Computer Engineering student at UAE University and research assistant at the Autonomous Systems Lab, working on reliable vision-language models for UAVs, agriculture and coral reefs.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#FFFFFF; --ink:#17202A; --slate:#56616B; --rule:#E2E6E9; --reef:#0B6A66; --wash:#F3F6F6;
-  --sans:"Schibsted Grotesk",system-ui,sans-serif; --serif:"Literata",Georgia,serif;
-  --measure:40rem;
-}
-@media (prefers-color-scheme:dark){
-  :root{--paper:#121A20;--ink:#E7ECEF;--slate:#9AA6AF;--rule:#2A353D;--reef:#5CC4BB;--wash:#18232A}
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.7 var(--serif);font-optical-sizing:auto}
-a{color:var(--reef);text-decoration-thickness:1px;text-underline-offset:.18em}
-a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:2px solid var(--reef);outline-offset:3px;border-radius:2px}
-.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.25rem}
-header.top{padding:4.5rem 0 3rem}
-.name{font:800 clamp(2.6rem,7vw,3.9rem)/1.02 var(--sans);letter-spacing:-.035em;margin:0}
-.role{font:500 1.05rem/1.5 var(--sans);color:var(--slate);margin:.9rem 0 0}
-.question{font:700 clamp(1.9rem,4.6vw,2.7rem)/1.12 var(--sans);letter-spacing:-.025em;margin:3.2rem 0 1.1rem;max-width:36rem;text-wrap:balance}
-.links{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;margin:2rem 0 0;padding:0;list-style:none;font:500 .98rem/1.4 var(--sans)}
-section{padding:2.6rem 0;border-top:1px solid var(--rule)}
-h2{font:700 1.35rem/1.3 var(--sans);letter-spacing:-.01em;margin:0 0 1.4rem}
-h3{font:600 1.08rem/1.35 var(--sans);margin:0 0 .35rem}
-p{margin:0 0 1rem}
-.muted{color:var(--slate)}
-.area{margin:0 0 2.4rem}
-.area:last-child{margin-bottom:0}
-.area .setting{font:600 .95rem/1.3 var(--sans);color:var(--reef);margin:0 0 .3rem}
-figure{margin:1rem 0 0}
-figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:4px;background:#fff}
-figcaption{font:400 .85rem/1.5 var(--sans);color:var(--slate);margin-top:.45rem}
-.wide{width:min(56rem,calc(100vw - 2.5rem));margin-left:50%;transform:translateX(-50%)}
-ol.pubs{list-style:none;margin:0;padding:0}
-ol.pubs li{margin:0 0 1.25rem;padding-left:1rem;border-left:2px solid var(--rule)}
-ol.pubs li.lead{border-left-color:var(--reef)}
-.pubtitle{font-weight:600}
-.venue{font-style:italic}
-.status{font:500 .85rem/1.4 var(--sans);color:var(--slate)}
-.pubgroup{font:600 .95rem/1.3 var(--sans);color:var(--slate);margin:1.8rem 0 .8rem}
-.pubgroup:first-of-type{margin-top:0}
-.plinks{font:500 .9rem/1.4 var(--sans)}
-.timeline{list-style:none;margin:0;padding:0}
-.timeline li{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;margin:0 0 1.5rem}
-.when{font:500 .9rem/1.6 var(--sans);color:var(--slate)}
-.timeline p{margin:.2rem 0 0}
-ul.plain{margin:0;padding-left:1.1rem}
-ul.plain li{margin:0 0 .5rem}
-footer{border-top:1px solid var(--rule);padding:2rem 0 3.5rem;font:400 .9rem/1.5 var(--sans);color:var(--slate)}
-@media (max-width:560px){
-  header.top{padding-top:3rem}
-  .timeline li{grid-template-columns:1fr;gap:0}
-}
-@media (prefers-reduced-motion:no-preference){
-  .question{animation:settle .9s cubic-bezier(.2,.7,.2,1) both .15s}
-  @keyframes settle{from{opacity:0;transform:translateY(.4rem)}to{opacity:1;transform:none}}
-}
-</style>
+<title>Mustafa Al Juboori — trustworthy vision-language models</title>
+<meta name="description" content="Mustafa Al Juboori: Computer & AI Engineering at UAE University, Research Assistant at the Autonomous Systems Lab. Vision-language models that answer with evidence, tested on drones, farms and coral reefs.">
+<meta name="theme-color" content="#ecebe7">
+<link rel="preload" href="assets/fonts/font-gambarino-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/font-general-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/flood-houston.webp" as="image">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="wrap">
 
-<header class="top">
-  <h1 class="name">Mustafa Al Juboori</h1>
-  <p class="role">B.Sc. Computer Engineering, UAE University, class of 2027<br>Research Assistant, Autonomous Systems Lab, UAEU<br>Visiting Researcher, eBRAIN Lab, NYU Abu Dhabi</p>
-  <p class="question">Can we trust what a vision&#8209;language model says it sees?</p>
-  <p>My research makes multimodal models answer with evidence, check each other, and know when to abstain, then puts them where errors are costly: on drones, in farms and on coral reefs.</p>
-  <ul class="links">
-    <li><a href="mailto:mustafanfj@gmail.com">mustafanfj@gmail.com</a></li>
-    <li><a href="https://scholar.google.com/citations?user=BswRTRYAAAAJ&amp;hl=en">Google Scholar</a></li>
-    <li><a href="https://github.com/mustafanfj">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/mustafa-al-juboori-657ba52a4">LinkedIn</a></li>
-  </ul>
+<a class="skip" href="#research">Skip to research</a>
+
+<header class="bar">
+  <a class="wordmark" href="#top">Mustafa Al Juboori</a>
+  <nav aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-small" href="mailto:mustafanfj@gmail.com">Email me</a>
 </header>
 
-<section id="research" aria-labelledby="research-h">
-  <h2 id="research-h">Research</h2>
+<div class="split" id="top">
 
-  <div class="area">
-    <p class="setting">From the air</p>
-    <h3>Reliable perception and communication for UAVs</h3>
-    <p><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM</a> asks a small VLM the same question through several independent evidence sources, fuses them with reliability weights, and abstains when calibrated confidence is low. With no fine-tuning it adds up to 7.0 points of accuracy on FloodNet aerial VQA and, for SmolVLM, cuts false "yes" answers on FloodNet from 21.8% to zero.</p>
-    <p><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM</a> lets a drone send the smallest message that still lets the ground station act in time, using a 1 kB semantic alert that needs 105× fewer bytes than the best image representation.</p>
-    <figure class="wide">
-      <img src="images/aeroverify.jpg" width="1600" height="799" loading="lazy" alt="AeroVerify-VLM framework: data split into DEV and EVAL, four evidence views from frozen Moondream2 and SmolVLM, reliability weights fit on DEV, and a confidence-thresholded decision on EVAL.">
-      <figcaption>AeroVerify-VLM: evidence views are weighted by their reliability on a development split, and the model abstains below a calibrated threshold.</figcaption>
+  <main class="read">
+
+    <section class="hero" aria-labelledby="name">
+      <figure class="hero-pic" data-stage="flood-houston">
+        <img src="assets/img/flood-houston.webp" width="1800" height="1198" alt="Aerial view of Houston on 31 August 2017, streets and parks under Hurricane Harvey floodwater">
+      </figure>
+      <div class="hero-card">
+        <h1 id="name" class="reveal">Mustafa Al Juboori</h1>
+        <p class="role reveal">Computer &amp; AI Engineering @ UAEU · Research Assistant, Autonomous Systems Lab · Vision-language models, reliable multimodal AI, edge AI for UAVs and agriculture</p>
+        <p class="statement reveal">Can we trust what a vision-language model says it sees? I build models that cite their evidence, check one another and abstain when unsure.</p>
+        <div class="hero-actions reveal">
+          <a class="btn" href="#research">See the research</a>
+          <ul class="quiet-links" aria-label="Profiles">
+            <li><a href="https://scholar.google.com/citations?user=BswRTRYAAAAJ&amp;hl=en">Google Scholar</a></li>
+            <li><a href="https://github.com/mustafanfj">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/mustafa-al-juboori-657ba52a4">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="research" id="research" aria-labelledby="research-h" data-stage-section="flood-houston">
+      <h2 id="research-h" class="reveal">Research</h2>
+      <p class="intro reveal">One question, asked in three places where a wrong answer costs something. Select a project to see how it works.</p>
+
+      <ol class="projects" role="list">
+        <li class="project is-open" data-stage="fig-aeroverify" data-place="air">
+          <button class="project-row" aria-expanded="true" aria-controls="p-aero" id="b-aero">
+            <span class="p-name">AeroVerify-VLM</span>
+            <span class="p-meta">Drones · IEEE OJVT, under review</span>
+          </button>
+          <div class="project-body" id="p-aero" role="region" aria-labelledby="b-aero">
+            <figure class="inline-fig"><img src="assets/img/fig-aeroverify.webp" width="1800" height="899" loading="lazy" alt="AeroVerify-VLM framework: four evidence views from frozen Moondream2 and SmolVLM, reliability weights fit on DEV, and a confidence-thresholded decision on EVAL"></figure>
+            <p>A frozen small VLM answers each question through four evidence sources. Reliability weights fit on a small development split decide which source to trust, and the model abstains when its calibrated confidence is low. Up to +7.0 points with no fine-tuning.</p>
+
+            <div class="abstain" data-abstain>
+              <div class="abstain-top">
+                <p class="abstain-q" id="abstain-label">Let the model say “I’m not sure”</p>
+                <button class="switch" role="switch" aria-checked="false" aria-labelledby="abstain-label" data-switch><span class="knob" aria-hidden="true"></span></button>
+              </div>
+              <div class="seg" role="radiogroup" aria-label="Benchmark and model">
+                <button role="radio" aria-checked="false" data-set="fm">FloodNet · Moondream2</button>
+                <button role="radio" aria-checked="true" data-set="fs">FloodNet · SmolVLM</button>
+                <button role="radio" aria-checked="false" data-set="rm">RSVQA · Moondream2</button>
+                <button role="radio" aria-checked="false" data-set="rs">RSVQA · SmolVLM</button>
+              </div>
+              <p class="abstain-out" aria-live="polite"><span class="big" data-acc>75.1%</span> <span data-desc>correct, answering every question.</span></p>
+              <p class="abstain-note">From the paper's held-out EVAL split; the threshold is chosen on DEV.</p>
+              <noscript><p class="abstain-note">With abstention, FloodNet · SmolVLM reaches 84.0% correct on the 83.4% of questions it answers.</p></noscript>
+            </div>
+            <p class="p-links"><a href="https://github.com/mustafanfj/AeroVerify-VLM">Code and paper notes</a></p>
+          </div>
+        </li>
+
+        <li class="project" data-stage="fig-semuav" data-place="air">
+          <button class="project-row" aria-expanded="false" aria-controls="p-sem" id="b-sem">
+            <span class="p-name">SemUAV-VLM</span>
+            <span class="p-meta">Drones · IEEE OJVT, under review</span>
+          </button>
+          <div class="project-body" id="p-sem" role="region" aria-labelledby="b-sem" hidden>
+            <figure class="inline-fig"><img src="assets/img/fig-semuav.webp" width="1800" height="590" loading="lazy" alt="SemUAV-VLM pipeline: observe, ground with a detector and bounded VLM, choose the least costly representation, deliver over a constrained uplink, act at the ground receiver"></figure>
+            <p>A drone sends the smallest message that still lets the ground station act in time. A 1 kB semantic alert keeps 73% of the best image's balanced recall with 105× fewer bytes, and meets its deadline on links down to 0.1 Mb/s.</p>
+            <p class="p-links"><a href="https://github.com/mustafanfj/SemUAV-VLM">Code</a></p>
+          </div>
+        </li>
+
+        <li class="project" data-stage="fig-vidapanda" data-place="field">
+          <button class="project-row" aria-expanded="false" aria-controls="p-vida" id="b-vida">
+            <span class="p-name">VIDA + PANDA</span>
+            <span class="p-meta">Crops · Frontiers in Plant Science, 2026</span>
+          </button>
+          <div class="project-body" id="p-vida" role="region" aria-labelledby="b-vida" hidden>
+            <figure class="inline-fig"><img src="assets/img/fig-vidapanda.webp" width="1800" height="995" loading="lazy" alt="VIDA+PANDA framework: seven agents diagnose independently, a GPT-5 judge scores them, then a selected panel debates by name with anti-sycophancy rules and weighted consensus"></figure>
+            <p>Seven VLMs diagnose 1,219 crop-leaf images independently. The strongest from each family then debate by name and may change a verdict only by citing new visual evidence. Debate leaves the panel's vote unchanged but lifts its weakest member by 12.1 points.</p>
+            <p class="p-links"><a href="https://doi.org/10.3389/fpls.2026.1890016">Paper</a> <a href="https://github.com/mustafanfj/vida-panda-crop-disease">Code</a></p>
+          </div>
+        </li>
+
+        <li class="project" data-stage="tomato-blight" data-place="field">
+          <button class="project-row" aria-expanded="false" aria-controls="p-crop" id="b-crop">
+            <span class="p-name">CropSage</span>
+            <span class="p-meta">Crops · R2C program, 100,000 AED</span>
+          </button>
+          <div class="project-body" id="p-crop" role="region" aria-labelledby="b-crop" hidden>
+            <p>TwinView, a dual-view handheld imaging system that returns a diagnosis, its severity, the visual evidence and a recommended action in seconds. Validated on farms in Al Ain. I founded it and lead the research.</p>
+          </div>
+        </li>
+
+        <li class="project" data-stage="fig-coralagent" data-place="water">
+          <button class="project-row" aria-expanded="false" aria-controls="p-coral" id="b-coral">
+            <span class="p-name">CoralAgent-TRACE</span>
+            <span class="p-meta">Reefs · Frontiers in Marine Science, under review</span>
+          </button>
+          <div class="project-body" id="p-coral" role="region" aria-labelledby="b-coral" hidden>
+            <figure class="inline-fig"><img src="assets/img/fig-coralagent.webp" width="1800" height="976" loading="lazy" alt="CoralAgent-TRACE architecture: SCOPE crops the region named in the question, a GPT-5 orchestrator runs planned tools, TRACE synthesises an answer, and a Grok GUARD verifier accepts, repairs or replaces it"></figure>
+            <p>An agent plans a short, question-specific sequence of tools for each reef question, and an independent verifier checks every answer against its evidence. +3.7 points over GPT-5 zero-shot on a 100-image CoralVQA development set; frozen, it answered 98.3% of 3,000 questions across 500 images.</p>
+            <p class="p-links"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a></p>
+          </div>
+        </li>
+
+        <li class="project" data-stage="reef-living" data-place="water">
+          <button class="project-row" aria-expanded="false" aria-controls="p-iqa" id="b-iqa">
+            <span class="p-name">Underwater image quality</span>
+            <span class="p-meta">Reefs · Springer ICATCICT 2026, accepted</span>
+          </button>
+          <div class="project-body" id="p-iqa" role="region" aria-labelledby="b-iqa" hidden>
+            <p>Domain-specific features and a neural network regressor score underwater image quality without a reference image: the first filter in CoralSense AI, which pairs it with CoralAgent-TRACE and is supported by a UAEU–Environment Agency Abu Dhabi SDG research grant.</p>
+          </div>
+        </li>
+
+        <li class="project" data-stage="acropora" data-place="water">
+          <button class="project-row" aria-expanded="false" aria-controls="p-ens" id="b-ens">
+            <span class="p-name">Coral health ensemble</span>
+            <span class="p-meta">Reefs · IEEE CAISAIS 2026, accepted</span>
+          </button>
+          <div class="project-body" id="p-ens" role="region" aria-labelledby="b-ens" hidden>
+            <p>A stacking ensemble over multi-domain handcrafted features for assessing coral health from underwater images.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="pubs" id="publications" aria-labelledby="pubs-h" data-stage-section="reef-bleached">
+      <h2 id="pubs-h" class="reveal">Publications</h2>
+      <ol class="ledger" role="list">
+        <li class="reveal">
+          <p class="l-title"><a href="https://doi.org/10.3389/fpls.2026.1890016">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis</a></p>
+          <p class="l-auth"><b>M. Al Juboori</b>, Z. Abbas, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+          <p class="l-venue">Frontiers in Plant Science 17</p><p class="l-status">2026</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title">A stacking ensemble framework for underwater coral health assessment using multi-domain handcrafted features</p>
+          <p class="l-auth"><b>M. Al Juboori</b>, A. S. Aladawi, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+          <p class="l-venue">CAISAIS 2026, IEEE</p><p class="l-status">Accepted</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title">Underwater image quality assessment using novel domain-specific features and a neural network regressor</p>
+          <p class="l-auth"><b>M. Al Juboori</b>, M. F. Nasir, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+          <p class="l-venue">ICATCICT 2026, Springer</p><p class="l-status">Accepted</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering</a></p>
+          <p class="l-auth"><b>M. Al Juboori</b>, Z. Abbas, M. Ur Rehman</p>
+          <p class="l-venue">Frontiers in Marine Science</p><p class="l-status">Under review</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title"><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links</a></p>
+          <p class="l-auth"><b>M. Al Juboori</b>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman</p>
+          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p><p class="l-status">Under review</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title"><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models</a></p>
+          <p class="l-auth"><b>M. Al Juboori</b> et al.</p>
+          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p><p class="l-status">Under review</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title">Task-oriented semantic communication for adaptive edge-cloud video vision-language model inference</p>
+          <p class="l-auth">M. F. Nasir, <b>M. Al Juboori</b>, S. H. Khan, F. Ullah, M. Ur Rehman</p>
+          <p class="l-venue">IEEE Open Journal of the Communications Society</p><p class="l-status">Under review</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title">From pixels to diagnosis: A survey of vision-language models for plant disease detection</p>
+          <p class="l-auth">Z. Al Aghbari, <b>M. Al Juboori</b>, T. Ilyas, F. Ullah, M. Ur Rehman</p>
+          <p class="l-venue">Smart Agricultural Technology</p><p class="l-status">Under review</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title">Efficient joint trajectory optimization and resource allocation for secure UAV networks: A deep reinforcement learning approach</p>
+          <p class="l-auth">A. Alwarafy, M. Hayajneh, <b>M. Al Juboori</b>, A. Almarzooqi, T. Almazrouei, R. Abera, K. Nega</p>
+          <p class="l-venue">IEEE Transactions on Communications</p><p class="l-status">Under review</p>
+        </li>
+        <li class="reveal">
+          <p class="l-title">Federated and privacy-preserving learning for healthcare and sports analytics: Architectures, trust models, deployment challenges, and future directions</p>
+          <p class="l-auth">A. W. Sardar, M. Khan, J. Ahmad, N. Ullah, <b>M. Al Juboori</b>, M. Ur Rehman, F. Ullah</p>
+          <p class="l-venue">Sensors</p><p class="l-status">Under review</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="note" aria-labelledby="note-h" data-stage-section="heat-stress">
+      <h2 id="note-h" class="reveal">Why this work</h2>
+      <figure class="inline-fig note-clip">
+        <video muted loop playsinline preload="none" poster="assets/img/heat-stress-poster.webp" aria-label="Animated map of accumulated heat stress over Caribbean coral reefs, July to September 2023">
+          <source src="assets/img/heat-stress.webm" type="video/webm"><source src="assets/img/heat-stress.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <div class="letter">
+        <p class="reveal">I study Computer &amp; AI Engineering at UAE University, graduating in May 2027, and I am looking for a master's place in computer vision.</p>
+        <p class="reveal">Most of my work asks one question: can we trust what a vision-language model says it sees? I try to answer it with mechanisms rather than prompts: models that must cite their evidence, that debate one another by name, that are weighted by how reliable they proved on held-out data, and that are allowed to abstain.</p>
+        <p class="reveal">I test these ideas where mistakes cost something: over flooded streets, where every byte on a weak drone link counts; on crop leaves, with a diagnosis a farmer in Al Ain can act on; and on coral reefs, where bleaching has to be judged from murky underwater images.</p>
+        <p class="reveal">In 2026 that became seven papers, four as first author, with released code for each main system. This summer I joined the eBRAIN Lab at NYU Abu Dhabi to study why compressed perception models break down in fog and rain.</p>
+        <p class="sign reveal">Mustafa Al Juboori<span>Abu Dhabi</span></p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="stage" aria-label="Pictures of the places this research works in">
+    <figure class="stage-item is-on" data-key="flood-houston">
+      <img src="assets/img/flood-houston.webp" width="1800" height="1198" alt="Aerial view of Houston on 31 August 2017 under Hurricane Harvey floodwater">
+      <figcaption>Houston, 31 August 2017. Hurricane Harvey from the air; FloodNet, one of AeroVerify's benchmarks, was flown after this storm.</figcaption>
     </figure>
-  </div>
-
-  <div class="area">
-    <p class="setting">In the field</p>
-    <h3>Multi-agent VLMs for crop disease diagnosis</h3>
-    <p>In <a href="https://doi.org/10.3389/fpls.2026.1890016">VIDA+PANDA</a> (Frontiers in Plant Science, 2026), seven vision-language models diagnose crop leaves independently and then debate by name, changing a verdict only when they can cite new visual evidence. Debate lifts the weakest member of the panel by 12.1 points. This work now continues as <strong>CropSage</strong>, a dual-view handheld system validated on farms in Al Ain and funded by the R2C program.</p>
-  </div>
-
-  <div class="area">
-    <p class="setting">Under water</p>
-    <h3>Evidence-grounded agents for coral reef health</h3>
-    <p><a href="https://github.com/mustafanfj/CoralAgent-TRACE">CoralAgent-TRACE</a> plans a short, question-specific sequence of tools for each reef question and has an independent verifier check every answer against its evidence. On a 100-image CoralVQA development set it beats GPT-5 zero-shot by 3.7 points. Together with my work on underwater image quality, it forms <strong>CoralSense AI</strong>, supported by a UAEU–Environment Agency Abu Dhabi SDG research grant.</p>
-    <figure class="wide">
-      <img src="images/coralagent.jpg" width="1600" height="867" loading="lazy" alt="CoralAgent-TRACE architecture: SCOPE crops the region named in the question, a GPT-5 orchestrator runs planned specialist tools, TRACE synthesizes an answer, and a Grok GUARD verifier accepts, repairs or replaces it.">
-      <figcaption>CoralAgent-TRACE: spatial cropping, planned tool use, answer synthesis and independent verification.</figcaption>
+    <figure class="stage-item is-fig" data-key="fig-aeroverify">
+      <img src="assets/img/fig-aeroverify.webp" width="1800" height="899" loading="lazy" alt="AeroVerify-VLM framework diagram">
+      <figcaption>AeroVerify-VLM: evidence views, reliability weights fit once on DEV, and abstention below a calibrated threshold.</figcaption>
     </figure>
-  </div>
-</section>
-
-<section id="publications" aria-labelledby="pubs-h">
-  <h2 id="pubs-h">Publications</h2>
-
-  <p class="pubgroup">Journal</p>
-  <ol class="pubs">
-    <li class="lead"><span class="pubtitle">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis.</span><br>
-      <strong>M. Al Juboori</strong>, Z. Abbas, Z. Al Aghbari, F. Ullah, M. Ur Rehman. <span class="venue">Frontiers in Plant Science</span> 17, 2026.<br>
-      <span class="plinks"><a href="https://doi.org/10.3389/fpls.2026.1890016">Paper</a> · <a href="https://github.com/mustafanfj/vida-panda-crop-disease">Code</a></span></li>
-  </ol>
-
-  <p class="pubgroup">Conference, accepted</p>
-  <ol class="pubs">
-    <li class="lead"><span class="pubtitle">A stacking ensemble framework for underwater coral health assessment using multi-domain handcrafted features.</span><br>
-      <strong>M. Al Juboori</strong>, A. S. Aladawi, Z. Al Aghbari, F. Ullah, M. Ur Rehman. <span class="venue">CAISAIS 2026</span>, IEEE, to appear.</li>
-    <li class="lead"><span class="pubtitle">Underwater image quality assessment using novel domain-specific features and a neural network regressor.</span><br>
-      <strong>M. Al Juboori</strong>, M. F. Nasir, Z. Al Aghbari, F. Ullah, M. Ur Rehman. <span class="venue">ICATCICT 2026</span>, Springer, to appear.</li>
-  </ol>
-
-  <p class="pubgroup">Under review</p>
-  <ol class="pubs">
-    <li class="lead"><span class="pubtitle">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering.</span><br>
-      <strong>M. Al Juboori</strong>, Z. Abbas, M. Ur Rehman. <span class="venue">Frontiers in Marine Science</span>.<br>
-      <span class="plinks"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a></span></li>
-    <li class="lead"><span class="pubtitle">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links.</span><br>
-      <strong>M. Al Juboori</strong>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman. <span class="venue">IEEE Open Journal of Vehicular Technology</span>.<br>
-      <span class="plinks"><a href="https://github.com/mustafanfj/SemUAV-VLM">Code</a></span></li>
-    <li class="lead"><span class="pubtitle">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models.</span><br>
-      <strong>M. Al Juboori</strong> et al. <span class="venue">IEEE Open Journal of Vehicular Technology</span>.<br>
-      <span class="plinks"><a href="https://github.com/mustafanfj/AeroVerify-VLM">Code</a></span></li>
-    <li><span class="pubtitle">Task-oriented semantic communication for adaptive edge-cloud video vision-language model inference.</span><br>
-      M. F. Nasir, <strong>M. Al Juboori</strong>, S. H. Khan, F. Ullah, M. Ur Rehman. <span class="venue">IEEE Open Journal of the Communications Society</span>.</li>
-    <li><span class="pubtitle">From pixels to diagnosis: A survey of vision-language models for plant disease detection.</span><br>
-      Z. Al Aghbari, <strong>M. Al Juboori</strong>, T. Ilyas, F. Ullah, M. Ur Rehman. <span class="venue">Smart Agricultural Technology</span>.</li>
-    <li><span class="pubtitle">Efficient joint trajectory optimization and resource allocation for secure UAV networks: A deep reinforcement learning approach.</span><br>
-      A. Alwarafy, M. Hayajneh, <strong>M. Al Juboori</strong>, A. Almarzooqi, T. Almazrouei, R. Abera, K. Nega. <span class="venue">IEEE Transactions on Communications</span>.</li>
-    <li><span class="pubtitle">Federated and privacy-preserving learning for healthcare and sports analytics: Architectures, trust models, deployment challenges, and future directions.</span><br>
-      A. W. Sardar, M. Khan, J. Ahmad, N. Ullah, <strong>M. Al Juboori</strong>, M. Ur Rehman, F. Ullah. <span class="venue">Sensors</span>.</li>
-  </ol>
-  <p class="status">A teal rule marks first-authored work.</p>
-</section>
-
-<section id="experience" aria-labelledby="exp-h">
-  <h2 id="exp-h">Experience</h2>
-  <ol class="timeline">
-    <li><span class="when">Jun 2026 – now</span><div><h3>Visiting Researcher, eBRAIN Lab, NYU Abu Dhabi</h3><p>With Prof. Muhammad Shafique. Showed that model compression nearly doubles the performance loss of lightweight perception models under adverse conditions, across six datasets and 566K+ images, and built physics- and diffusion-based synthetic data to recover it.</p></div></li>
-    <li><span class="when">Jan 2026 – now</span><div><h3>Research Assistant, Autonomous Systems Lab, UAEU</h3><p>With Dr. Mobeen Ur Rehman. Seven papers in 2026, four as first author, on agentic and multi-agent VLMs for agriculture, coral reefs and UAVs. Helped secure 750,000+ AED in research funding.</p></div></li>
-    <li><span class="when">Apr 2025 – Jan 2026</span><div><h3>Research Intern, UAEU SURE+ Program</h3><p>With Dr. Abdulmalik Al Warafy. A PPO-based deep RL framework for secure UAV trajectory design and resource allocation, improving secrecy rate by 12.8% over the strongest DRL baseline.</p></div></li>
-    <li><span class="when">Jun – Aug 2025</span><div><h3>Research Intern, AIRoCS Group, MBZUAI</h3><p>With Dr. Abdalla Swikir; one of 56 selected from 2,000+ applicants. Learned provably safe obstacle-avoidance policies from demonstration and deployed them on a 7-DoF Franka Emika arm.</p></div></li>
-  </ol>
-</section>
-
-<section id="projects" aria-labelledby="proj-h">
-  <h2 id="proj-h">Projects and funding</h2>
-  <ul class="plain">
-    <li><strong>CropSage</strong>, founder and lead researcher. TwinView, a dual-view handheld imaging system that returns a diagnosis, severity, visual evidence and a recommended action in seconds. 100,000 AED from the R2C program.</li>
-    <li><strong>Agri-Sensei</strong>, research engineer. A multimodal plant-health pipeline (SAM segmentation, LoRA-tuned LLaVA, retrieval) on a 41,833-image expert benchmark; severity agreement with experts of κ = 0.80 against 0.66 for the best frontier VLM. 650,000 AED with Silal.</li>
-    <li><strong>CoralSense AI</strong>, project lead. End-to-end reef monitoring combining underwater image quality assessment with CoralAgent-TRACE, to be shown at GITEX Dubai 2026.</li>
-    <li><strong>Dovvi</strong>, co-founder and CTO, 2025. Wearable fetal-movement monitoring; 1st place and 150,000 AED at the P2M Startup Competition.</li>
-  </ul>
-</section>
-
-<section id="education" aria-labelledby="edu-h">
-  <h2 id="edu-h">Education and honors</h2>
-  <p><strong>B.Sc. Computer Engineering</strong>, United Arab Emirates University, expected May 2027. CGPA 3.95/4.0.</p>
-  <ul class="plain">
-    <li>Chancellor's Scholarship for Elite Students (full tuition, merit-based)</li>
-    <li>Dean's List</li>
-  </ul>
-</section>
-
+    <figure class="stage-item is-fig" data-key="fig-semuav">
+      <img src="assets/img/fig-semuav.webp" width="1800" height="590" loading="lazy" alt="SemUAV-VLM pipeline diagram">
+      <figcaption>SemUAV-VLM: observe, ground, choose the least costly message, deliver, act.</figcaption>
+    </figure>
+    <figure class="stage-item is-fig" data-key="fig-vidapanda">
+      <img src="assets/img/fig-vidapanda.webp" width="1800" height="995" loading="lazy" alt="VIDA+PANDA framework diagram">
+      <figcaption>VIDA + PANDA: independent diagnosis, then named debate with an anti-sycophancy rule.</figcaption>
+    </figure>
+    <figure class="stage-item" data-key="tomato-blight">
+      <img src="assets/img/tomato-blight.webp" width="1800" height="1347" loading="lazy" alt="Tomato plant with late blight lesions on its fruit and stems">
+      <figcaption>Late blight on tomato, caused by Phytophthora infestans: the kind of lesion VIDA + PANDA's agents argue over.</figcaption>
+    </figure>
+    <figure class="stage-item is-fig" data-key="fig-coralagent">
+      <img src="assets/img/fig-coralagent.webp" width="1800" height="976" loading="lazy" alt="CoralAgent-TRACE architecture diagram">
+      <figcaption>CoralAgent-TRACE: crop the region, plan the tools, synthesise, then let GUARD verify.</figcaption>
+    </figure>
+    <figure class="stage-item" data-key="reef-living">
+      <img src="assets/img/reef-living.webp" width="1200" height="1800" loading="lazy" alt="Close view of coral polyps with a small goby resting on them">
+      <figcaption>Living coral up close. Underwater pictures like this are scored for quality before any model reads them.</figcaption>
+    </figure>
+    <figure class="stage-item" data-key="acropora">
+      <img src="assets/img/acropora.webp" width="1800" height="1350" loading="lazy" alt="Pale Acropora coral with a melon butterflyfish swimming beside it">
+      <figcaption>Acropora coral with a melon butterflyfish, Papahānaumokuākea.</figcaption>
+    </figure>
+    <figure class="stage-item" data-key="reef-bleached">
+      <img src="assets/img/reef-bleached.webp" width="1800" height="1200" loading="lazy" alt="Diver above a reef where algae has overgrown bleached coral">
+      <figcaption>After mass bleaching: algae overgrowing dead coral at Lisianski Island.</figcaption>
+    </figure>
+    <figure class="stage-item" data-key="flood-beaumont">
+      <img src="assets/img/flood-beaumont.webp" width="1800" height="1286" loading="lazy" alt="Aerial view of flooded homes in Beaumont, Texas, after Hurricane Harvey">
+      <figcaption>Beaumont, Texas, September 2017. Is the road flooded? Questions like this are what AeroVerify answers.</figcaption>
+    </figure>
+    <figure class="stage-item is-video" data-key="heat-stress">
+      <video muted loop playsinline preload="none" poster="assets/img/heat-stress-poster.webp" aria-label="Animated map of accumulated heat stress over Caribbean coral reefs, July to September 2023">
+        <source src="assets/img/heat-stress.webm" type="video/webm">
+        <source src="assets/img/heat-stress.mp4" type="video/mp4">
+      </video>
+      <figcaption>Heat stress building over Caribbean reefs, July to September 2023. Bleaching follows heat like this, which is why reef monitoring has to scale.</figcaption>
+    </figure>
+  </aside>
 </div>
-<footer><div class="wrap">Mustafa Al Juboori, Abu Dhabi, UAE. Reach me at <a href="mailto:mustafanfj@gmail.com">mustafanfj@gmail.com</a>.</div></footer>
+
+<section class="experience" id="experience" aria-labelledby="exp-h">
+  <div class="exp-inner">
+    <h2 id="exp-h" class="reveal">Experience</h2>
+    <ol class="exp-list" role="list">
+      <li class="reveal"><p class="when">Jun 2026 – now</p><div><h3>Visiting Researcher, eBRAIN Lab, NYU Abu Dhabi</h3><p>With Prof. Muhammad Shafique. Showed that model compression nearly doubles the performance loss of lightweight perception models under adverse conditions, across six datasets and 566K+ images, and built physics- and diffusion-based synthetic data to recover it.</p></div></li>
+      <li class="reveal"><p class="when">Jan 2026 – now</p><div><h3>Research Assistant, Autonomous Systems Lab, UAEU</h3><p>With Dr. Mobeen Ur Rehman. Seven papers in 2026, four as first author, on agentic and multi-agent VLMs for agriculture, coral reefs and UAVs; 750,000+ AED in research funding.</p></div></li>
+      <li class="reveal"><p class="when">Apr 2025 – Jan 2026</p><div><h3>Research Intern, UAEU SURE+ Program</h3><p>With Dr. Abdulmalik Al Warafy. A PPO-based deep RL framework for secure UAV trajectory design and resource allocation, improving secrecy rate by 12.8% over the strongest DRL baseline.</p></div></li>
+      <li class="reveal"><p class="when">Jun – Aug 2025</p><div><h3>Research Intern, AIRoCS Group, MBZUAI</h3><p>With Dr. Abdalla Swikir; one of 56 selected from 2,000+ applicants. Learned provably safe obstacle-avoidance policies from demonstration and deployed them on a 7-DoF Franka Emika arm.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="names" aria-labelledby="names-h">
+  <h2 id="names-h" class="reveal">Labs, funding and venues</h2>
+  <div class="name-cols">
+    <ul class="reveal" role="list"><li class="kind">Labs</li><li>Autonomous Systems Lab, UAEU</li><li>eBRAIN Lab, NYU Abu Dhabi</li><li>AIRoCS Group, MBZUAI</li><li>SURE+ Program, UAEU</li></ul>
+    <ul class="reveal" role="list"><li class="kind">Funding</li><li>Silal, 650,000 AED</li><li>R2C program, 100,000 AED</li><li>UAEU–EAD SDG Research Grant</li><li>P2M Startup Competition, 1st place</li></ul>
+    <ul class="reveal" role="list"><li class="kind">Venues</li><li>Frontiers in Plant Science</li><li>Frontiers in Marine Science</li><li>IEEE Open Journal of Vehicular Technology</li><li>IEEE CAISAIS 2026</li><li>Springer ICATCICT 2026</li></ul>
+    <ul class="reveal" role="list"><li class="kind">Honours</li><li>Chancellor's Scholarship for Elite Students</li><li>Dean's List</li><li>CGPA 3.95 / 4.0</li></ul>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <img src="assets/img/flood-beaumont.webp" alt="" width="1800" height="1286" loading="lazy" class="r32">
+      <img src="assets/img/tomato-blight.webp" alt="" width="1800" height="1347" loading="lazy" class="r11">
+      <img src="assets/img/reef-living.webp" alt="" width="1200" height="1800" loading="lazy" class="r34">
+      <img src="assets/img/acropora.webp" alt="" width="1800" height="1350" loading="lazy" class="r32">
+      <img src="assets/img/flood-houston.webp" alt="" width="1800" height="1198" loading="lazy" class="r11">
+      <img src="assets/img/reef-diver.webp" alt="" width="1800" height="1195" loading="lazy" class="r34">
+      <img src="assets/img/reef-bleached.webp" alt="" width="1800" height="1200" loading="lazy" class="r32">
+      <img src="assets/img/flood-beaumont.webp" alt="" width="1800" height="1286" loading="lazy" class="r32">
+      <img src="assets/img/tomato-blight.webp" alt="" width="1800" height="1347" loading="lazy" class="r11">
+      <img src="assets/img/reef-living.webp" alt="" width="1200" height="1800" loading="lazy" class="r34">
+      <img src="assets/img/acropora.webp" alt="" width="1800" height="1350" loading="lazy" class="r32">
+      <img src="assets/img/flood-houston.webp" alt="" width="1800" height="1198" loading="lazy" class="r11">
+      <img src="assets/img/reef-diver.webp" alt="" width="1800" height="1195" loading="lazy" class="r34">
+      <img src="assets/img/reef-bleached.webp" alt="" width="1800" height="1200" loading="lazy" class="r32">
+    </div>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-head">
+      <h2 id="contact-h" class="reveal">Write to me</h2>
+      <p class="contact-lede reveal">I read every message from prospective supervisors and labs, and reply within a few days. I graduate in May 2027.</p>
+    </div>
+    <div class="cells reveal">
+      <a class="cell" href="mailto:mustafanfj@gmail.com?subject=Hello%20Mustafa"><span>Email</span>mustafanfj@gmail.com</a>
+      <a class="cell" href="https://scholar.google.com/citations?user=BswRTRYAAAAJ&amp;hl=en"><span>Papers</span>Google Scholar</a>
+      <a class="cell cell-inv" href="https://www.linkedin.com/in/mustafa-al-juboori-657ba52a4"><span>Connect</span>LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <figure class="foot-pic">
+    <img src="assets/img/reef-diver.webp" width="1800" height="1195" loading="lazy" alt="A National Park Service diver recording observations beside a reef">
+  </figure>
+  <div class="foot-menu">
+    <p class="foot-mark">Mustafa Al Juboori</p>
+    <nav aria-label="Footer">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="https://github.com/mustafanfj">GitHub</a>
+      <a href="mailto:mustafanfj@gmail.com">Email</a>
+    </nav>
+    <div class="foot-blocks">
+      <p>Autonomous Systems Lab<br>College of Computing and AI<br>UAE University, Al Ain</p>
+      <p><a href="https://scholar.google.com/citations?user=BswRTRYAAAAJ&amp;hl=en">Google Scholar</a><br><a href="https://www.linkedin.com/in/mustafa-al-juboori-657ba52a4">LinkedIn</a><br><a href="https://github.com/mustafanfj">GitHub</a></p>
+    </div>
+    <p class="legal">© 2026 Mustafa Al Juboori. Photographs via Wikimedia Commons: Hurricane Harvey aerials, U.S. Air Force (public domain) and U.S. Army (public domain); late blight, Scot Nelson (CC0); reef diver, U.S. National Park Service (public domain); Acropora and bleached reef, NOAA National Marine Sanctuaries (public domain); coral polyps, Laszlo Ilyes (CC BY 2.0); heat-stress animation, NASA Earth Observatory, Wanmei Liang, using Coral Reef Watch data (public domain). Framework figures from the author's papers.</p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
 </body>
 </html>
