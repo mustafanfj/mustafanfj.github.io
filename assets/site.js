@@ -1,22 +1,41 @@
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- selected papers: one open at a time ---------- */
+  /* ---------- selected papers: one open at a time ----------
+     The clicked title stays where it was, its body unfolds beneath it
+     (figure, then text, then the demo), then the page glides so the title
+     sits under the bar. Closing the paper above no longer yanks the view. */
   const papers = [...document.querySelectorAll('.paper')];
+  const barH = () => (document.querySelector('.bar')?.offsetHeight || 64) + 12;
+  const jump = y => window.scrollTo({ top: y, behavior: 'instant' });
   papers.forEach(p => {
     const btn = p.querySelector('.paper-row');
+    const body = p.querySelector('.paper-body');
     btn.addEventListener('click', () => {
       const willOpen = !p.classList.contains('is-open');
+      const before = btn.getBoundingClientRect().top;
       papers.forEach(o => {
         o.classList.remove('is-open');
         o.querySelector('.paper-row').setAttribute('aria-expanded', 'false');
-        o.querySelector('.paper-body').hidden = true;
+        const ob = o.querySelector('.paper-body');
+        ob.getAnimations().forEach(an => an.cancel());
+        ob.hidden = true;
       });
       if (willOpen) {
         p.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
-        p.querySelector('.paper-body').hidden = false;
+        body.hidden = false;
       }
+      // keep the title under the pointer, whatever closed above it
+      jump(window.scrollY + btn.getBoundingClientRect().top - before);
+      if (!willOpen) return;
+      if (!reduce) {
+        const h = body.scrollHeight;
+        body.animate([{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }],
+          { duration: Math.min(520, 240 + h / 6), easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
+      }
+      const target = window.scrollY + btn.getBoundingClientRect().top - barH();
+      if (Math.abs(target - window.scrollY) > 8) window.scrollTo({ top: target, behavior: reduce ? 'instant' : 'smooth' });
     });
   });
 
