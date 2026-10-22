@@ -61,6 +61,7 @@
           <button class="paper-row" aria-expanded="true" aria-controls="p-vida" id="b-vida">
             <span class="p-name">VIDA + PANDA</span>
             <span class="p-meta">Crop disease · Frontiers in Plant Science, 2026</span>
+            <span class="p-key">Debate lifts the weakest model by 12.1 points; the panel vote stays put.</span>
           </button>
           <div class="paper-body" id="p-vida" role="region" aria-labelledby="b-vida">
             <figure class="inline-fig"><img src="assets/img/fig-vidapanda.webp" width="1800" height="995" loading="lazy" alt="VIDA+PANDA framework: seven agents diagnose independently, a GPT-5 judge scores them, then a selected panel debates by name with anti-sycophancy rules and weighted consensus"></figure>
@@ -85,6 +86,7 @@
           <button class="paper-row" aria-expanded="false" aria-controls="p-coral" id="b-coral">
             <span class="p-name">CoralAgent-TRACE</span>
             <span class="p-meta">Coral reefs · Frontiers in Marine Science, under review</span>
+            <span class="p-key">3.7 points above GPT-5 zero-shot; removing the verifier costs 12.7.</span>
           </button>
           <div class="paper-body" id="p-coral" role="region" aria-labelledby="b-coral" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-coralagent.webp" width="1800" height="976" loading="lazy" alt="CoralAgent-TRACE architecture: SCOPE crops the region named in the question, a GPT-5 orchestrator runs planned tools, TRACE synthesises an answer, and a Grok GUARD verifier accepts, repairs or replaces it"></figure>
@@ -112,6 +114,7 @@
           <button class="paper-row" aria-expanded="false" aria-controls="p-aero" id="b-aero">
             <span class="p-name">AeroVerify-VLM</span>
             <span class="p-meta">Drones · IEEE OJVT, under review</span>
+            <span class="p-key">Up to +7.0 points with no fine-tuning, and it abstains when unsure.</span>
           </button>
           <div class="paper-body" id="p-aero" role="region" aria-labelledby="b-aero" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-aeroverify.webp" width="1800" height="899" loading="lazy" alt="AeroVerify-VLM framework: four evidence views from frozen Moondream2 and SmolVLM, reliability weights fit on DEV, and a confidence-thresholded decision on EVAL"></figure>
@@ -142,6 +145,7 @@
           <button class="paper-row" aria-expanded="false" aria-controls="p-sem" id="b-sem">
             <span class="p-name">SemUAV-VLM</span>
             <span class="p-meta">Drones · IEEE OJVT, under review</span>
+            <span class="p-key">A 1 kB alert keeps 73% of the best image’s recall with 105× fewer bytes.</span>
           </button>
           <div class="paper-body" id="p-sem" role="region" aria-labelledby="b-sem" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-semuav.webp" width="1800" height="590" loading="lazy" alt="SemUAV-VLM pipeline: observe, ground with a detector and bounded VLM, choose the least costly representation, deliver over a constrained uplink, act at the ground receiver"></figure>
@@ -169,6 +173,7 @@
 
   <section class="pubs" id="publications" aria-labelledby="pubs-h">
     <h2 id="pubs-h" class="reveal">All publications</h2>
+      <h3 class="ledger-h reveal">Published and accepted</h3>
       <ol class="ledger" role="list">
         <li class="reveal">
           <p class="l-title"><a href="https://doi.org/10.3389/fpls.2026.1890016">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis</a></p>
@@ -185,40 +190,43 @@
           <p class="l-auth"><b>M. Al Juboori</b>, M. F. Nasir, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
           <p class="l-venue">ICATCICT 2026, Springer</p><p class="l-status">Accepted</p>
         </li>
+      </ol>
+      <h3 class="ledger-h reveal">Under review</h3>
+      <ol class="ledger" role="list">
         <li class="reveal">
           <p class="l-title"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering</a></p>
           <p class="l-auth"><b>M. Al Juboori</b>, Z. Abbas, M. Ur Rehman</p>
-          <p class="l-venue">Frontiers in Marine Science</p><p class="l-status">Under review</p>
+          <p class="l-venue">Frontiers in Marine Science</p>
         </li>
         <li class="reveal">
           <p class="l-title"><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links</a></p>
           <p class="l-auth"><b>M. Al Juboori</b>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman</p>
-          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p><p class="l-status">Under review</p>
+          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p>
         </li>
         <li class="reveal">
           <p class="l-title"><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models</a></p>
           <p class="l-auth"><b>M. Al Juboori</b> et al.</p>
-          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p><p class="l-status">Under review</p>
+          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p>
         </li>
         <li class="reveal">
           <p class="l-title">Task-oriented semantic communication for adaptive edge-cloud video vision-language model inference</p>
           <p class="l-auth">M. F. Nasir, <b>M. Al Juboori</b>, S. H. Khan, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">IEEE Open Journal of the Communications Society</p><p class="l-status">Under review</p>
+          <p class="l-venue">IEEE Open Journal of the Communications Society</p>
         </li>
         <li class="reveal">
           <p class="l-title">From pixels to diagnosis: A survey of vision-language models for plant disease detection</p>
           <p class="l-auth">Z. Al Aghbari, <b>M. Al Juboori</b>, T. Ilyas, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">Smart Agricultural Technology</p><p class="l-status">Under review</p>
+          <p class="l-venue">Smart Agricultural Technology</p>
         </li>
         <li class="reveal">
           <p class="l-title">Efficient joint trajectory optimization and resource allocation for secure UAV networks: A deep reinforcement learning approach</p>
           <p class="l-auth">A. Alwarafy, M. Hayajneh, <b>M. Al Juboori</b>, A. Almarzooqi, T. Almazrouei, R. Abera, K. Nega</p>
-          <p class="l-venue">IEEE Transactions on Communications</p><p class="l-status">Under review</p>
+          <p class="l-venue">IEEE Transactions on Communications</p>
         </li>
         <li class="reveal">
           <p class="l-title">Federated and privacy-preserving learning for healthcare and sports analytics: Architectures, trust models, deployment challenges, and future directions</p>
           <p class="l-auth">A. W. Sardar, M. Khan, J. Ahmad, N. Ullah, <b>M. Al Juboori</b>, M. Ur Rehman, F. Ullah</p>
-          <p class="l-venue">Sensors</p><p class="l-status">Under review</p>
+          <p class="l-venue">Sensors</p>
         </li>
       </ol>
   </section>
@@ -227,35 +235,39 @@
     <h2 id="projects-h" class="reveal">Projects and funding</h2>
     <p class="intro reveal">Research that left the lab: two funded agricultural systems and a health-tech startup.</p>
 
-    <article class="proj proj-wide" aria-labelledby="cropsage-h">
-      <div class="proj-text">
+    <article class="proj" aria-labelledby="cropsage-h">
+      <div class="proj-head">
         <h3 id="cropsage-h" class="reveal">CropSage</h3>
-        <p class="proj-meta reveal">TwinView · R2C program, 100,000 AED</p>
-        <p class="reveal">TwinView is a dual-view handheld imaging system that returns a diagnosis, its severity, the visual evidence and a recommended action in seconds. It won 100,000 AED from the R2C program. We are now commercializing it, shaping the product around the problems growers actually have, and validating it with farmers in greenhouses in Al Ain. I founded the project and lead its research.</p>
+        <p class="proj-meta reveal">TwinView · R2C program, 100,000 AED · now being commercialized</p>
       </div>
+      <p class="proj-body reveal">TwinView is a dual-view handheld imaging system that returns a diagnosis, its severity, the visual evidence and a recommended action in seconds. It won 100,000 AED from the R2C program. We are now commercializing it, shaping the product around the problems growers actually have, and validating it with farmers in greenhouses in Al Ain. I founded the project and lead its research.</p>
       <div class="proj-pics two">
-        <figure class="reveal"><img src="assets/img/greenhouse-tomato.webp" width="1179" height="638" loading="lazy" alt="Mustafa and a teammate checking a tablet beside a greenhouse tomato plant with diseased leaves"><figcaption>Testing on a diseased greenhouse tomato crop in Al Ain.</figcaption></figure>
-        <figure class="reveal"><img src="assets/img/greenhouse-aisle.webp" width="1179" height="639" loading="lazy" alt="Two team members walking a greenhouse aisle in Al Ain, reviewing results on a tablet"><figcaption>Validating TwinView in an Al Ain greenhouse.</figcaption></figure>
+        <figure class="reveal"><img src="assets/img/greenhouse-tomato.webp" width="1179" height="638" loading="lazy" alt="Mustafa and a teammate checking a tablet beside a greenhouse tomato plant with diseased leaves"><figcaption>Testing on a diseased tomato crop in an Al Ain greenhouse.</figcaption></figure>
+        <figure class="reveal"><img src="assets/img/greenhouse-aisle.webp" width="1179" height="639" loading="lazy" alt="Two team members walking a greenhouse aisle in Al Ain, reviewing results on a tablet"><figcaption>Validating TwinView with growers in Al Ain.</figcaption></figure>
       </div>
     </article>
 
-    <article class="proj proj-side" aria-labelledby="agri-h">
-      <figure class="reveal"><img src="assets/img/agri-sensei.webp" width="1179" height="1780" loading="lazy" alt="Mustafa and Dr. Mobeen Ur Rehman at the UAEU Agri-Sensei stand at Make it in the Emirates 2026"><figcaption>Presenting Agri-Sensei with Dr. Mobeen Ur Rehman at Make it in the Emirates 2026.</figcaption></figure>
-      <div class="proj-text">
+    <article class="proj" aria-labelledby="agri-h">
+      <div class="proj-head">
         <h3 id="agri-h" class="reveal">Agri-Sensei</h3>
         <p class="proj-meta reveal">Make it in the Emirates 2026 · Silal research funding, 650,000 AED</p>
-        <p class="reveal">Agri-Sensei is our plant disease detector. We took it to Make it in the Emirates 2026 with Dr. Mobeen Ur Rehman, met Silal there, and secured 650,000 AED in research funding for the Autonomous Systems Lab.</p>
+      </div>
+      <p class="proj-body reveal">Agri-Sensei is our plant disease detector. We took it to Make it in the Emirates 2026 with Dr. Mobeen Ur Rehman, met Silal there, and secured 650,000 AED in research funding for the Autonomous Systems Lab.</p>
+      <div class="proj-pics one">
+        <figure class="reveal"><img src="assets/img/agri-sensei-stand.webp" width="1179" height="1080" loading="lazy" alt="Mustafa and Dr. Mobeen Ur Rehman at the UAEU Agri-Sensei stand at Make it in the Emirates 2026"><figcaption>Presenting Agri-Sensei with Dr. Mobeen Ur Rehman at Make it in the Emirates 2026.</figcaption></figure>
       </div>
     </article>
 
-    <article class="proj proj-pair" aria-labelledby="dovvi-h">
-      <div class="proj-text">
+    <article class="proj" aria-labelledby="dovvi-h">
+      <div class="proj-head">
         <h3 id="dovvi-h" class="reveal">Dovvi</h3>
         <p class="proj-meta reveal">P2M 2025 · first place, 150,000 AED</p>
-        <p class="reveal">Dovvi is a maternal-health wearable that tracks fetal movement and maternal vitals. As its co-founder and CTO, I won first place and 150,000 AED with the team at P2M 2025, UAEU Science and Innovation Park.</p>
       </div>
-      <figure class="reveal p2m"><img src="assets/img/p2m-award.webp" width="1179" height="642" loading="lazy" alt="The Dovvi team on stage holding the P2M first-place cheque for 150,000 dirhams"><figcaption>First place at P2M 2025.</figcaption></figure>
-      <figure class="reveal booth"><img src="assets/img/dovvi-booth.webp" width="1179" height="1260" loading="lazy" alt="The Dovvi stand: a poster describing the wearable, the prototype electronics and packaged devices"><figcaption>Dovvi’s stand at Demo Day, November 2025.</figcaption></figure>
+      <p class="proj-body reveal">Dovvi is a maternal-health wearable that tracks fetal movement and maternal vitals. As its co-founder and CTO, I won first place and 150,000 AED with the team at P2M 2025, UAEU Science and Innovation Park.</p>
+      <div class="proj-pics pair">
+        <figure class="reveal"><img src="assets/img/p2m-award.webp" width="1179" height="642" loading="lazy" alt="The Dovvi team on stage holding the P2M first-place cheque for 150,000 dirhams"><figcaption>First place at P2M 2025.</figcaption></figure>
+        <figure class="reveal"><img src="assets/img/dovvi-booth.webp" width="1179" height="1260" loading="lazy" alt="The Dovvi stand: a poster describing the wearable, the prototype electronics and packaged devices"><figcaption>Dovvi’s stand at Demo Day, November 2025.</figcaption></figure>
+      </div>
     </article>
   </section>
 

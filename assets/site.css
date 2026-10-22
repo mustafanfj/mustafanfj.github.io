@@ -68,6 +68,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .paper-row{width:100%;display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:6px 24px;min-height:72px;padding:20px 0;text-align:left;color:var(--muted);transition:color 200ms ease}
 .p-name{font-family:var(--display);font-size:clamp(1.5rem,1.2rem + 1.2vw,2.25rem);line-height:1.05;letter-spacing:-.015em}
 .p-meta{font-size:var(--step-small);text-align:right}
+.p-key{grid-column:1 / -1;font-size:var(--step-body);line-height:1.4;max-width:62ch}
 .paper.is-open .paper-row,.paper-row:focus-visible{color:var(--ink)}
 @media (hover:hover) and (pointer:fine){.paper-row:hover{color:var(--ink)}}
 .paper-body{padding:4px 0 48px}
@@ -106,9 +107,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .demo-note{margin-top:12px;font-size:var(--step-small);color:var(--muted)}
 
 /* publications ledger */
+.ledger-h{margin-top:44px;font:400 var(--step-lead)/1.1 var(--display);letter-spacing:-.01em}
+.ledger-h + .ledger{margin-top:12px}
+@media (min-width:961px){.ledger{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;row-gap:12px}}
 .ledger{margin-top:44px}
-.ledger li{display:grid;grid-template-columns:1fr auto;max-width:860px;column-gap:24px;padding:16px 0}
-.ledger li + li{margin-top:6px}
+.ledger li{display:grid;grid-template-columns:1fr auto;align-content:start;column-gap:24px;padding:16px 0}
+
 .l-title{grid-column:1 / -1;font-weight:500;max-width:52ch}
 .l-title a{text-decoration-color:color-mix(in srgb,var(--ink) 35%,transparent)}
 .l-auth{grid-column:1 / -1;margin-top:4px;font-size:var(--step-small);color:var(--muted)}
@@ -117,24 +121,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .l-status{margin-top:6px;font-size:var(--step-small);font-weight:500;text-align:right}
 
 
-/* ---- projects: three compositions ---- */
-.projects .proj{margin-top:clamp(56px,7vw,96px);display:grid;gap:var(--m)}
-.proj-text{max-width:56ch}
+/* ---- projects: one panel each, photos under their own text ---- */
+.projects .proj{margin-top:clamp(40px,5vw,64px);background:var(--surface);border-radius:var(--r);padding:clamp(24px,4vw,56px)}
+.projects .proj + .proj{margin-top:clamp(32px,4vw,48px)}
+.proj-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px}
 .proj h3{font:400 clamp(1.75rem,1.3rem + 1.6vw,2.75rem)/1 var(--display);letter-spacing:-.02em}
-.proj-meta{margin-top:10px;font-size:var(--step-small);font-weight:500;color:var(--muted)}
-.proj-meta + p{margin-top:18px}
-.proj figure{position:relative;border-radius:var(--r);overflow:hidden}
+.proj-meta{font-size:var(--step-small);font-weight:500;color:var(--muted)}
+.proj-body{margin-top:18px;max-width:62ch}
+.proj-pics{margin-top:clamp(24px,3vw,36px);display:grid;gap:var(--m)}
+.proj figure{position:relative;border-radius:calc(var(--r) - 4px);overflow:hidden}
 .proj img{width:100%;height:100%;object-fit:cover}
 .proj figcaption{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px);background:var(--bg);font-size:var(--step-small);line-height:1.4;padding:8px 12px;border-radius:calc(var(--r) - 6px)}
-.proj-wide .proj-text{margin-bottom:20px}
-.proj-pics.two{display:grid;grid-template-columns:1fr 1fr;gap:var(--m)}
+.proj-pics.two{grid-template-columns:1fr 1fr}
 .proj-pics.two img{aspect-ratio:1179/638}
-.proj-side{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:end;gap:clamp(24px,4vw,64px)}
-.proj-side img{aspect-ratio:4/5;object-position:50% 40%}
-.proj-pair{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}
-.proj-pair .proj-text{grid-column:1 / -1;margin-bottom:8px}
-.proj-pair .p2m img{aspect-ratio:1179/642}
-.proj-pair .booth img{aspect-ratio:1179/642;object-position:30% 10%}
+.proj-pics.one img{aspect-ratio:3/2;object-position:50% 45%}
+.proj-pics.pair{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+.proj-pics.pair img{aspect-ratio:1179/642}
+.proj-pics.pair figure:last-child img{position:absolute;inset:0;aspect-ratio:auto;object-position:30% 10%}
 
 /* ---- note ---- */
 .note{padding-bottom:clamp(96px,10vw,168px)}
@@ -225,7 +228,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .hero-pic{height:48svh}
   .hero-pic figcaption{display:none}
   .note-grid{grid-template-columns:1fr}
-  .proj-side{grid-template-columns:1fr 1fr}
   .experience{margin:var(--m)}
   .contact{margin:0 var(--m)}
   .contact-inner{grid-template-columns:1fr}
@@ -251,9 +253,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .ledger li{grid-template-columns:1fr}
   .l-status{text-align:left;margin-top:2px}
   .foot-blocks{grid-template-columns:1fr}
-  .proj-pics.two,.proj-side,.proj-pair{grid-template-columns:1fr}
-  .proj-pair .booth img{aspect-ratio:4/5}
-  .proj-side img{aspect-ratio:1/1;object-position:50% 45%}
+  .proj-pics.two,.proj-pics.pair{grid-template-columns:1fr}
+  .proj-pics.one img{aspect-ratio:1179/1080}
+  .proj-pics.pair figure:last-child{aspect-ratio:4/5}
   .hero-pic{height:36svh}
   .meter{grid-template-columns:5.5rem minmax(0,1fr) 3.2rem;gap:8px}
 }
