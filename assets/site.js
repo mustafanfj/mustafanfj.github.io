@@ -130,16 +130,6 @@
   }, { rootMargin: '0px 0px -8% 0px' });
   reveals.forEach(r => ro.observe(r));
 
-  /* the reef clip plays only while on screen */
-  const clip = document.querySelector('.note-clip video');
-  if (clip && !reduce) new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { clip.preload = 'auto'; clip.play().catch(() => {}); }
-    else clip.pause();
-  }).observe(clip);
-  document.addEventListener('visibilitychange', () => {
-    document.querySelectorAll('video').forEach(v => { if (document.hidden) v.pause(); });
-  });
-
   /* pause the photo strip when it is off screen or the tab is hidden */
   const contact = document.querySelector('.contact');
   let visible = false;

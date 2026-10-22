@@ -138,12 +138,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 /* ---- note ---- */
 .note{padding-bottom:clamp(96px,10vw,168px)}
-.note-grid{margin-top:36px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,5vw,72px);align-items:start}
+.note-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:start}
+.letter{max-width:60ch}
+.letter p:first-child{font-size:var(--step-lead);line-height:1.35}
 .letter p + p{margin-top:1em}
 .sign{margin-top:32px !important;font:400 1.375rem/1.2 var(--display)}
 .sign span{display:block;font:400 var(--step-small)/1.4 var(--text);color:var(--muted);margin-top:4px}
-.note-clip video{width:100%;display:block;border-radius:var(--r);aspect-ratio:1/1;object-fit:cover;background:#3d0010}
-.note-clip figcaption{margin-top:10px;font-size:var(--step-small);color:var(--muted);max-width:44ch}
 
 /* ---- experience: full field, one column ---- */
 .experience{max-width:1120px;margin:var(--m) auto;border-radius:var(--r);background:var(--field);color:var(--field-ink);padding:clamp(64px,8vw,128px) var(--pad)}
@@ -253,6 +253,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .foot-blocks{grid-template-columns:1fr}
   .proj-pics.two,.proj-side,.proj-pair{grid-template-columns:1fr}
   .proj-pair .booth img{aspect-ratio:4/5}
+  .proj-side img{aspect-ratio:1/1;object-position:50% 45%}
   .hero-pic{height:36svh}
   .meter{grid-template-columns:5.5rem minmax(0,1fr) 3.2rem;gap:8px}
 }
