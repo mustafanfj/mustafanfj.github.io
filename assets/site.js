@@ -134,6 +134,38 @@
     });
   });
 
+  /* ---------- publications filter: the list answers at once ---------- */
+  const pf = document.querySelector('[data-pubfilter]');
+  if (pf) {
+    const opts = [...pf.querySelectorAll('[role="radio"]')];
+    const pubs = [...document.querySelectorAll('.pub')];
+    const match = (el, f) => f === 'all' || (f === 'first' && el.dataset.first === '1') ||
+      (f === 'out' && el.dataset.status !== 'review') || (f === 'review' && el.dataset.status === 'review');
+    const pick = b => {
+      opts.forEach(o => { const on = o === b; o.setAttribute('aria-checked', String(on)); o.tabIndex = on ? 0 : -1; });
+      let i = 0;
+      pubs.forEach(el => {
+        const show = match(el, b.dataset.f);
+        const was = !el.hidden;
+        el.hidden = !show;
+        if (show && !reduce) {
+          el.getAnimations().forEach(an => an.cancel());
+          el.animate([{ opacity: was ? .4 : 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }],
+            { duration: 220, delay: Math.min(i++, 6) * 30, easing: 'cubic-bezier(0.23, 1, 0.32, 1)', fill: 'backwards' });
+        }
+      });
+    };
+    opts.forEach(b => { b.tabIndex = b.getAttribute('aria-checked') === 'true' ? 0 : -1; b.addEventListener('click', () => pick(b)); });
+    pf.addEventListener('keydown', e => {
+      const fwd = e.key === 'ArrowRight' || e.key === 'ArrowDown', back = e.key === 'ArrowLeft' || e.key === 'ArrowUp';
+      if (!fwd && !back) return;
+      e.preventDefault();
+      const i = opts.findIndex(b => b.getAttribute('aria-checked') === 'true');
+      const n = opts[(i + (fwd ? 1 : opts.length - 1)) % opts.length];
+      n.focus(); pick(n);
+    });
+  }
+
   /* ---------- entrances: heading, then text, then picture ---------- */
   const reveals = [...document.querySelectorAll('.reveal')];
   if (!('IntersectionObserver' in window)) { reveals.forEach(r => r.classList.add('in')); return; }

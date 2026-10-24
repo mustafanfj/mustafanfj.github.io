@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#ecebe7">
 <link rel="preload" href="assets/fonts/font-gambarino-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/font-general-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/img/flood-houston.webp" as="image">
-<link rel="stylesheet" href="assets/site.css?v=9">
+<link rel="preload" href="assets/img/uaeu-campus.webp" as="image">
+<link rel="stylesheet" href="assets/site.css?v=10">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -31,8 +31,8 @@
 
   <section class="hero" aria-labelledby="name">
     <figure class="hero-pic">
-      <img src="assets/img/flood-houston.webp" width="1800" height="1198" alt="Aerial view of Houston on 31 August 2017, streets and parks under Hurricane Harvey floodwater">
-      <figcaption>Houston after Hurricane Harvey, 2017. FloodNet, one of the drone benchmarks in my work, was flown after this storm.</figcaption>
+      <img src="assets/img/uaeu-campus.webp" width="1600" height="900" alt="UAE University campus in Al Ain: the main building behind palm trees and a reflecting pool">
+      <figcaption>UAE University, Al Ain.</figcaption>
     </figure>
     <div class="hero-card">
       <div class="hero-head">
@@ -172,63 +172,108 @@
   </section>
 
   <section class="pubs" id="publications" aria-labelledby="pubs-h">
-    <h2 id="pubs-h" class="reveal">All publications</h2>
-      <h3 class="ledger-h reveal">Published and accepted</h3>
-      <ol class="ledger" role="list">
-        <li class="reveal">
-          <p class="l-title"><a href="https://doi.org/10.3389/fpls.2026.1890016">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis</a></p>
-          <p class="l-auth"><b>M. Al Juboori</b>, Z. Abbas, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">Frontiers in Plant Science 17</p><p class="l-status">2026</p>
+    <div class="pubs-head">
+      <h2 id="pubs-h" class="reveal">All publications</h2>
+      <p class="intro reveal">Ten papers, six as first author: one published, two accepted and seven under review.</p>
+    </div>
+    <div class="seg pub-filter reveal" role="radiogroup" aria-label="Filter publications" data-pubfilter>
+      <button role="radio" aria-checked="true" data-f="all">All <span>10</span></button>
+      <button role="radio" aria-checked="false" data-f="first">First author <span>6</span></button>
+      <button role="radio" aria-checked="false" data-f="out">Published and accepted <span>3</span></button>
+      <button role="radio" aria-checked="false" data-f="review">Under review <span>7</span></button>
+    </div>
+    <ol class="pub-list" role="list" aria-live="polite">
+        <li class="pub" data-status="published" data-first="1">
+          <p class="pub-when"><span class="pub-status s-published">Published</span><span class="pub-year">2026 · First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, Z. Abbas, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+            <p class="pub-venue">Frontiers in Plant Science 17</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://doi.org/10.3389/fpls.2026.1890016">Paper</a><a class="pub-link" href="https://github.com/mustafanfj/vida-panda-crop-disease">Code</a></p>
         </li>
-        <li class="reveal">
-          <p class="l-title">A stacking ensemble framework for underwater coral health assessment using multi-domain handcrafted features</p>
-          <p class="l-auth"><b>M. Al Juboori</b>, A. S. Aladawi, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">CAISAIS 2026, IEEE</p><p class="l-status">Accepted</p>
+        <li class="pub" data-status="accepted" data-first="1">
+          <p class="pub-when"><span class="pub-status s-accepted">Accepted</span><span class="pub-year">2026 · First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">A stacking ensemble framework for underwater coral health assessment using multi-domain handcrafted features</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, A. S. Aladawi, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+            <p class="pub-venue">IEEE CAISAIS 2026</p>
+          </div>
+          <p class="pub-links"></p>
         </li>
-        <li class="reveal">
-          <p class="l-title">Underwater image quality assessment using novel domain-specific features and a neural network regressor</p>
-          <p class="l-auth"><b>M. Al Juboori</b>, M. F. Nasir, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">ICATCICT 2026, Springer</p><p class="l-status">Accepted</p>
+        <li class="pub" data-status="accepted" data-first="1">
+          <p class="pub-when"><span class="pub-status s-accepted">Accepted</span><span class="pub-year">2026 · First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">Underwater image quality assessment using novel domain-specific features and a neural network regressor</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, M. F. Nasir, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+            <p class="pub-venue">Springer ICATCICT 2026</p>
+          </div>
+          <p class="pub-links"></p>
         </li>
-      </ol>
-      <h3 class="ledger-h reveal">Under review</h3>
-      <ol class="ledger" role="list">
-        <li class="reveal">
-          <p class="l-title"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering</a></p>
-          <p class="l-auth"><b>M. Al Juboori</b>, Z. Abbas, M. Ur Rehman</p>
-          <p class="l-venue">Frontiers in Marine Science</p>
+        <li class="pub" data-status="review" data-first="1">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, Z. Abbas, M. Ur Rehman</p>
+            <p class="pub-venue">Frontiers in Marine Science</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a></p>
         </li>
-        <li class="reveal">
-          <p class="l-title"><a href="https://github.com/mustafanfj/SemUAV-VLM">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links</a></p>
-          <p class="l-auth"><b>M. Al Juboori</b>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman</p>
-          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p>
+        <li class="pub" data-status="review" data-first="1">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman</p>
+            <p class="pub-venue">IEEE Open Journal of Vehicular Technology</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/SemUAV-VLM">Code</a></p>
         </li>
-        <li class="reveal">
-          <p class="l-title"><a href="https://github.com/mustafanfj/AeroVerify-VLM">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models</a></p>
-          <p class="l-auth"><b>M. Al Juboori</b> et al.</p>
-          <p class="l-venue">IEEE Open Journal of Vehicular Technology</p>
+        <li class="pub" data-status="review" data-first="1">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models</p>
+            <p class="pub-auth"><b>M. Al Juboori</b> et al.</p>
+            <p class="pub-venue">IEEE Open Journal of Vehicular Technology</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/AeroVerify-VLM">Code</a></p>
         </li>
-        <li class="reveal">
-          <p class="l-title">Task-oriented semantic communication for adaptive edge-cloud video vision-language model inference</p>
-          <p class="l-auth">M. F. Nasir, <b>M. Al Juboori</b>, S. H. Khan, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">IEEE Open Journal of the Communications Society</p>
+        <li class="pub" data-status="review" data-first="0">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">Co-author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">Task-oriented semantic communication for adaptive edge-cloud video vision-language model inference</p>
+            <p class="pub-auth">M. F. Nasir, <b>M. Al Juboori</b>, S. H. Khan, F. Ullah, M. Ur Rehman</p>
+            <p class="pub-venue">IEEE Open Journal of the Communications Society</p>
+          </div>
+          <p class="pub-links"></p>
         </li>
-        <li class="reveal">
-          <p class="l-title">From pixels to diagnosis: A survey of vision-language models for plant disease detection</p>
-          <p class="l-auth">Z. Al Aghbari, <b>M. Al Juboori</b>, T. Ilyas, F. Ullah, M. Ur Rehman</p>
-          <p class="l-venue">Smart Agricultural Technology</p>
+        <li class="pub" data-status="review" data-first="0">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">Co-author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">From pixels to diagnosis: A survey of vision-language models for plant disease detection</p>
+            <p class="pub-auth">Z. Al Aghbari, <b>M. Al Juboori</b>, T. Ilyas, F. Ullah, M. Ur Rehman</p>
+            <p class="pub-venue">Smart Agricultural Technology</p>
+          </div>
+          <p class="pub-links"></p>
         </li>
-        <li class="reveal">
-          <p class="l-title">Efficient joint trajectory optimization and resource allocation for secure UAV networks: A deep reinforcement learning approach</p>
-          <p class="l-auth">A. Alwarafy, M. Hayajneh, <b>M. Al Juboori</b>, A. Almarzooqi, T. Almazrouei, R. Abera, K. Nega</p>
-          <p class="l-venue">IEEE Transactions on Communications</p>
+        <li class="pub" data-status="review" data-first="0">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">Co-author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">Efficient joint trajectory optimization and resource allocation for secure UAV networks: A deep reinforcement learning approach</p>
+            <p class="pub-auth">A. Alwarafy, M. Hayajneh, <b>M. Al Juboori</b>, A. Almarzooqi, T. Almazrouei, R. Abera, K. Nega</p>
+            <p class="pub-venue">IEEE Transactions on Communications</p>
+          </div>
+          <p class="pub-links"></p>
         </li>
-        <li class="reveal">
-          <p class="l-title">Federated and privacy-preserving learning for healthcare and sports analytics: Architectures, trust models, deployment challenges, and future directions</p>
-          <p class="l-auth">A. W. Sardar, M. Khan, J. Ahmad, N. Ullah, <b>M. Al Juboori</b>, M. Ur Rehman, F. Ullah</p>
-          <p class="l-venue">Sensors</p>
+        <li class="pub" data-status="review" data-first="0">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">Co-author</span></p>
+          <div class="pub-main">
+            <p class="pub-title">Federated and privacy-preserving learning for healthcare and sports analytics: Architectures, trust models, deployment challenges, and future directions</p>
+            <p class="pub-auth">A. W. Sardar, M. Khan, J. Ahmad, N. Ullah, <b>M. Al Juboori</b>, M. Ur Rehman, F. Ullah</p>
+            <p class="pub-venue">Sensors</p>
+          </div>
+          <p class="pub-links"></p>
         </li>
-      </ol>
+    </ol>
   </section>
 
   <section class="projects" id="projects" aria-labelledby="projects-h">
@@ -253,8 +298,9 @@
         <p class="proj-meta reveal">Make it in the Emirates 2026 · Silal research funding, 650,000 AED</p>
       </div>
       <p class="proj-body reveal">Agri-Sensei is our plant disease detector. We took it to Make it in the Emirates 2026 with Dr. Mobeen Ur Rehman, met Silal there, and secured 650,000 AED in research funding for the Autonomous Systems Lab.</p>
-      <div class="proj-pics one">
-        <figure class="reveal"><img src="assets/img/agri-sensei-stand.webp" width="1179" height="1080" loading="lazy" alt="Mustafa and Dr. Mobeen Ur Rehman at the UAEU Agri-Sensei stand at Make it in the Emirates 2026"><figcaption>Presenting Agri-Sensei with Dr. Mobeen Ur Rehman at Make it in the Emirates 2026.</figcaption></figure>
+      <div class="proj-pics agri">
+        <figure class="reveal"><img src="assets/img/agri-sensei-team.webp" width="1370" height="941" loading="lazy" alt="Mustafa, Dr. Mobeen Ur Rehman and a teammate at the UAEU stand at Make it in the Emirates 2026"><figcaption>The Agri-Sensei team at the UAEU stand, Make it in the Emirates 2026.</figcaption></figure>
+        <figure class="reveal"><img src="assets/img/agri-sensei-stand.webp" width="1179" height="1080" loading="lazy" alt="Mustafa and Dr. Mobeen Ur Rehman in front of the Agri-Sensei plant disease detector display"><figcaption>Presenting Agri-Sensei with Dr. Mobeen Ur Rehman.</figcaption></figure>
       </div>
     </article>
 
@@ -290,7 +336,12 @@
   <div class="exp-inner">
     <h2 id="exp-h" class="reveal">Experience</h2>
     <ol class="exp-list" role="list">
-      <li class="reveal"><p class="when">Jun 2026 – now</p><div><h3>Visiting Researcher, eBRAIN Lab, NYU Abu Dhabi</h3><p>With Prof. Muhammad Shafique. Showed that model compression nearly doubles the performance loss of lightweight perception models under adverse conditions, across six datasets and 566K+ images, and built physics- and diffusion-based synthetic data to recover it.</p></div></li>
+      <li class="reveal"><p class="when">Jun 2026 – now</p><div><h3>Visiting Researcher, eBRAIN Lab, NYU Abu Dhabi</h3><p>With Prof. Muhammad Shafique. Showed that model compression nearly doubles the performance loss of lightweight perception models under adverse conditions, across six datasets and 566K+ images, and built physics- and diffusion-based synthetic data to recover it.</p>
+        <div class="exp-pics">
+          <figure><img src="assets/img/nyuad-badge.webp" width="1100" height="1467" loading="lazy" alt="Mustafa's NYU researcher badge, July 2026, held up on the NYU Abu Dhabi campus"><figcaption>Researcher badge, NYU Abu Dhabi.</figcaption></figure>
+          <figure><img src="assets/img/nyuad-robots.webp" width="1100" height="1467" loading="lazy" alt="A humanoid robot, a quadruped and mobile manipulators in a robotics lab at NYU Abu Dhabi"><figcaption>Robots in the lab at NYU Abu Dhabi.</figcaption></figure>
+          <figure><img src="assets/img/nyuad-lab.webp" width="900" height="1600" loading="lazy" alt="The research floor at NYU Abu Dhabi, with desks and screens along a long corridor"><figcaption>The research floor.</figcaption></figure>
+        </div></div></li>
       <li class="reveal"><p class="when">Jan 2026 – now</p><div><h3>Research Assistant, Autonomous Systems Lab, UAEU</h3><p>With Dr. Mobeen Ur Rehman. Seven papers in 2026, four as first author, on reliable vision and vision-language systems for agriculture, coral reefs and UAVs; 750,000+ AED in research funding.</p></div></li>
       <li class="reveal"><p class="when">Jun – Aug 2025</p><div><h3>Research Intern, AIRoCS Group, MBZUAI</h3><p>UGRIP 2025, with Dr. Abdalla Swikir: one of 56 interns selected from 2,000+ applicants, an acceptance rate under 3%. Learned provably safe obstacle-avoidance policies from demonstration and deployed them on a 7-DoF Franka Emika arm.</p>
         <div class="exp-pics">
@@ -348,7 +399,7 @@
 
 <footer class="foot">
   <figure class="foot-pic">
-    <img src="assets/img/greenhouse-aisle.webp" width="1179" height="639" loading="lazy" alt="Mustafa and a teammate reviewing results on a tablet in a greenhouse in Al Ain">
+    <img src="assets/img/nyuad-badge.webp" width="1100" height="1467" loading="lazy" alt="Mustafa's NYU researcher badge held up on the NYU Abu Dhabi campus">
   </figure>
   <div class="foot-menu">
     <p class="foot-mark">Mustafa Al Juboori</p>
@@ -363,10 +414,10 @@
       <p>Autonomous Systems Lab<br>College of Computing and AI<br>UAE University, Al Ain</p>
       <p><a href="https://scholar.google.com/citations?user=BswRTRYAAAAJ&amp;hl=en">Google Scholar</a><br><a href="https://www.linkedin.com/in/mustafa-al-juboori-657ba52a4">LinkedIn</a><br><a href="https://github.com/mustafanfj">GitHub</a></p>
     </div>
-    <p class="legal">© 2026 Mustafa Al Juboori. Hurricane Harvey aerial: U.S. Air Force, via Wikimedia Commons (public domain). Framework figures from the author's papers; portrait and event photographs are the author's own.</p>
+    <p class="legal">© 2026 Mustafa Al Juboori. Campus photograph: UAE University. Framework figures from the author's papers; portrait and event photographs are the author's own.</p>
   </div>
 </footer>
 
-<script src="assets/site.js?v=9" defer></script>
+<script src="assets/site.js?v=10" defer></script>
 </body>
 </html>
