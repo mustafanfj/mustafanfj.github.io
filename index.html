@@ -9,7 +9,7 @@
 <link rel="preload" href="assets/fonts/font-gambarino-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/font-general-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/uaeu-campus.webp" as="image">
-<link rel="stylesheet" href="assets/site.css?v=14">
+<link rel="stylesheet" href="assets/site.css?v=16">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -280,19 +280,6 @@
     </article>
   </section>
 
-  <section class="note" aria-labelledby="note-h">
-    <div class="note-grid">
-      <h2 id="note-h" class="reveal">Why this work</h2>
-      <div class="letter">
-        <p class="reveal">I study Computer &amp; AI Engineering at UAE University, graduating in May 2027, and I am looking for a master's place in computer vision.</p>
-        <p class="reveal">Most of my work asks one question: can we trust what a vision system sees? I try to answer it with mechanisms rather than prompts: models grounded in visual evidence, weighted by how reliable they proved on held-out data, allowed to abstain, and small enough to run on the hardware the field allows.</p>
-        <p class="reveal">I test these ideas where mistakes cost something: over flooded streets, where every byte on a weak drone link counts; on crop leaves, with a diagnosis a farmer in Al Ain can act on; and on coral reefs, where bleaching has to be judged from murky underwater images.</p>
-        <p class="reveal">In 2026 that became seven papers, four as first author, with released code for each main system. This summer I joined the eBRAIN Lab at NYU Abu Dhabi to study why compressed perception models break down in fog and rain.</p>
-        <p class="sign reveal">Mustafa Al Juboori<span>Abu Dhabi</span></p>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <section class="experience" id="experience" aria-labelledby="exp-h">
@@ -316,6 +303,33 @@
     </ol>
   </div>
 </section>
+
+<div class="page">
+  <section class="why" id="why" aria-labelledby="why-h">
+    <div class="why-head">
+      <h2 id="why-h" class="reveal">Why this work</h2>
+      <p class="why-lead reveal">Most of my work asks one question: can we trust what a vision system sees? I try to answer it with mechanisms rather than prompts.</p>
+    </div>
+    <dl class="why-list">
+      <div class="reveal">
+        <dt>Answers grounded in evidence</dt>
+        <dd>A model should show what in the image supports its answer. In VIDA + PANDA, an agent may change its diagnosis only by citing new visual evidence; in CoralAgent-TRACE, an independent verifier checks every answer against its evidence.</dd>
+      </div>
+      <div class="reveal">
+        <dt>Calibrated, and allowed to abstain</dt>
+        <dd>Reliability should be measured on held-out data, then used. AeroVerify-VLM weights each source of evidence by how reliable it proved, and declines to answer when its calibrated confidence is low.</dd>
+      </div>
+      <div class="reveal">
+        <dt>Built for the hardware that is there</dt>
+        <dd>A good model is no use if it cannot run where it is needed. SemUAV-VLM sends a 1 kB alert in place of an image over a weak link, and at the eBRAIN Lab I study why compressed perception models break down in fog and rain.</dd>
+      </div>
+    </dl>
+    <div class="why-next reveal">
+      <p>I graduate from UAE University in May 2027 and am looking for a master's place in computer vision, to keep working on these questions.</p>
+      <a class="btn" href="mailto:mustafanfj@gmail.com?subject=Master%27s%20in%20computer%20vision">Write to me</a>
+    </div>
+  </section>
+</div>
 
 <section class="names" aria-labelledby="names-h">
   <h2 id="names-h" class="reveal">Labs, venues and honours</h2>
@@ -362,13 +376,13 @@
 
 <footer class="foot">
   <figure class="foot-pic">
-    <img src="assets/img/agri-sensei-stand.webp" width="1179" height="1080" loading="lazy" alt="Mustafa and Dr. Mobeen Ur Rehman at the Agri-Sensei stand, Make it in the Emirates 2026">
+    <img src="assets/img/agri-sensei-portrait.webp" width="1000" height="1553" loading="lazy" alt="Mustafa and Dr. Mobeen Ur Rehman at the Agri-Sensei stand, Make it in the Emirates 2026">
   </figure>
   <div class="foot-menu">
     <p class="foot-mark">Mustafa Al Juboori</p>
     <nav aria-label="Footer">
-      <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="https://github.com/mustafanfj">GitHub</a>
       <a href="mailto:mustafanfj@gmail.com">Email</a>

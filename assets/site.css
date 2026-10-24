@@ -145,17 +145,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .proj-pics.pair img{aspect-ratio:1179/642}
 .proj-pics.pair figure:last-child img{position:absolute;inset:0;aspect-ratio:auto;object-position:30% 10%}
 
-/* ---- note ---- */
-.note{padding-bottom:clamp(96px,10vw,168px)}
-.note-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:start}
-.letter{max-width:60ch}
-.letter p:first-child{font-size:var(--step-lead);line-height:1.35}
-.letter p + p{margin-top:1em}
-.sign{margin-top:32px !important;font:400 1.375rem/1.2 var(--display)}
-.sign span{display:block;font:400 var(--step-small)/1.4 var(--text);color:var(--muted);margin-top:4px}
+/* ---- why this work: the question, three principles, the ask ---- */
+.why{padding-bottom:0}
+.why-head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:24px clamp(32px,5vw,72px);align-items:start}
+.why-lead{font-size:var(--step-lead);line-height:1.35;max-width:34ch}
+.why-list{margin:clamp(48px,6vw,80px) 0 0}
+.why-list > div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:10px clamp(32px,5vw,72px);padding:clamp(22px,2.5vw,32px) 0}
+.why-list > div + div{margin-top:var(--m)}
+.why-list dt{font:400 var(--step-lead)/1.2 var(--display);letter-spacing:-.01em}
+.why-list dd{margin:0;line-height:1.55;max-width:58ch}
+.why-next{margin-top:clamp(40px,5vw,64px)}
+.why-next{background:var(--field);color:var(--field-ink);border-radius:var(--r);padding:clamp(24px,3vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px}
+.why-next p{font-size:var(--step-lead);line-height:1.35;max-width:40ch}
+.why-next .btn{background:var(--field-ink);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.why-next .btn:hover{background:#ffffff}}
 
 /* ---- experience: full field, one column ---- */
-.experience{max-width:1120px;margin:var(--m) auto;border-radius:var(--r);background:var(--field);color:var(--field-ink);padding:clamp(64px,8vw,128px) var(--pad)}
+.experience{max-width:1120px;margin:clamp(96px,10vw,168px) auto var(--m);border-radius:var(--r);background:var(--field);color:var(--field-ink);padding:clamp(64px,8vw,128px) var(--pad)}
 .experience h2{font:400 var(--step-head)/1 var(--display);letter-spacing:-.02em}
 .exp-list{margin-top:48px}
 .exp-list li{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:24px}
@@ -199,7 +205,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* ---- footer ---- */
 .foot{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--m);padding:var(--m);min-height:92svh}
 .foot-pic{border-radius:var(--r);overflow:hidden;min-height:420px}
-.foot-pic img{width:100%;height:100%;object-fit:cover;object-position:45% 50%}
+.foot-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .foot-menu{display:flex;flex-direction:column;padding:clamp(32px,5vw,80px) var(--pad) 24px}
 .foot-mark{font:400 1.375rem/1 var(--display)}
 .foot-menu nav{margin-top:clamp(40px,6vw,80px);display:flex;flex-direction:column;align-items:flex-start;gap:14px}
@@ -233,8 +239,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .me{position:absolute;right:20px;top:-72px;width:104px;outline:4px solid var(--surface)}
   .hero-pic{height:48svh}
   .hero-pic figcaption{display:none}
-  .note-grid{grid-template-columns:1fr}
-  .experience{margin:var(--m)}
+  .why-head{grid-template-columns:1fr}
+  .why-list > div{grid-template-columns:1fr}
+  .experience{margin:96px var(--m) var(--m)}
   .contact{margin:0 var(--m)}
   .contact-inner{grid-template-columns:1fr}
   .name-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}
