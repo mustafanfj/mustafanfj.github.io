@@ -9,7 +9,7 @@
 <link rel="preload" href="assets/fonts/font-gambarino-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/font-general-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/uaeu-campus.webp" as="image">
-<link rel="stylesheet" href="assets/site.css?v=16">
+<link rel="stylesheet" href="assets/site.css?v=17">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -306,27 +306,25 @@
 
 <div class="page">
   <section class="why" id="why" aria-labelledby="why-h">
-    <div class="why-head">
-      <h2 id="why-h" class="reveal">Why this work</h2>
-      <p class="why-lead reveal">Most of my work asks one question: can we trust what a vision system sees? I try to answer it with mechanisms rather than prompts.</p>
-    </div>
-    <dl class="why-list">
-      <div class="reveal">
-        <dt>Answers grounded in evidence</dt>
-        <dd>A model should show what in the image supports its answer. In VIDA + PANDA, an agent may change its diagnosis only by citing new visual evidence; in CoralAgent-TRACE, an independent verifier checks every answer against its evidence.</dd>
+    <div class="why-grid">
+      <div class="why-side">
+        <h2 id="why-h" class="reveal">Why this work</h2>
+        <figure class="why-pic reveal">
+          <img src="assets/img/greenhouse-tomato.webp" width="1179" height="638" loading="lazy" alt="Mustafa and a teammate checking a tablet beside a diseased tomato plant in an Al Ain greenhouse">
+          <figcaption>Validating with growers in Al Ain.</figcaption>
+        </figure>
       </div>
-      <div class="reveal">
-        <dt>Calibrated, and allowed to abstain</dt>
-        <dd>Reliability should be measured on held-out data, then used. AeroVerify-VLM weights each source of evidence by how reliable it proved, and declines to answer when its calibrated confidence is low.</dd>
+      <div class="why-text">
+        <p class="why-lead reveal">I started caring about trust when I took our models out of the lab and into greenhouses in Al Ain.</p>
+        <p class="reveal">Working with the growers who would use them, I saw that an accuracy score means little to someone who has to act on the answer. They wanted to know why the system thought what it did, and when it was unsure. Since then I have tried to build vision systems that show their evidence, check themselves, and say when they do not know.</p>
+        <p class="reveal">In a master's, I want to take that further in four directions:</p>
+        <ul class="why-dirs" role="list">
+          <li class="reveal"><b>Reliable vision-language models</b>Models that ground their answers in what the image shows, stay calibrated and know when to abstain.</li>
+          <li class="reveal"><b>Efficient vision at the edge</b>Small and compressed enough to run on the hardware that is actually there.</li>
+          <li class="reveal"><b>Robust perception</b>Perception that holds up when conditions change: fog, rain, murky water, new places.</li>
+          <li class="reveal"><b>Embodied perception</b>Carrying that reliability into robots that act on what they see.</li>
+        </ul>
       </div>
-      <div class="reveal">
-        <dt>Built for the hardware that is there</dt>
-        <dd>A good model is no use if it cannot run where it is needed. SemUAV-VLM sends a 1 kB alert in place of an image over a weak link, and at the eBRAIN Lab I study why compressed perception models break down in fog and rain.</dd>
-      </div>
-    </dl>
-    <div class="why-next reveal">
-      <p>I graduate from UAE University in May 2027 and am looking for a master's place in computer vision, to keep working on these questions.</p>
-      <a class="btn" href="mailto:mustafanfj@gmail.com?subject=Master%27s%20in%20computer%20vision">Write to me</a>
     </div>
   </section>
 </div>
