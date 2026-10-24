@@ -115,7 +115,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .pub-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;padding-top:.15em}
 .pub-link{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;background:var(--bg);font-size:var(--step-small);font-weight:500;text-decoration:none;transition:background-color 160ms ease,transform 160ms var(--ease-out)}
 .pub-link:active,.pub-open:active{transform:scale(.97)}
-.pub.is-key .pub-title{font-size:clamp(1.25rem,1.05rem + .7vw,1.625rem);line-height:1.18}
+.pub.is-key .pub-title{font-size:clamp(1.25rem,1.05rem + .7vw,1.625rem);line-height:1.3}
 .pub-key{margin-top:8px;max-width:58ch;line-height:1.45}
 .pub-open{display:inline-flex;align-items:center;min-height:34px;padding:0 16px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:var(--step-small);font-weight:500;white-space:nowrap;transition:transform 160ms var(--ease-out)}
 .pub-open[aria-expanded="true"]{background:var(--bg);color:var(--ink)}
