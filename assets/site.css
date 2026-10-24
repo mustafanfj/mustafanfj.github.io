@@ -110,6 +110,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .pubs-head .intro{margin-top:0}
 .pub-filter{margin-top:36px}
 .pub-filter button span{margin-left:4px;opacity:.6}
+.pub-filter button[aria-checked="false"]{background:var(--surface)}
 .pub-list{margin-top:28px;background:var(--surface);border-radius:var(--r);padding:clamp(12px,2vw,24px) clamp(20px,3vw,40px)}
 .pub{display:grid;grid-template-columns:10rem minmax(0,1fr) auto;gap:8px 32px;align-items:start;padding:22px 0}
 .pub-when{display:flex;flex-direction:column;gap:4px;font-size:var(--step-small);padding-top:.2em}
