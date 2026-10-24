@@ -64,22 +64,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hero-actions{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px}
 .quiet-links{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:var(--step-small);font-weight:500}
 
-/* ---- selected papers: one open at a time ---- */
-.paper-list{margin-top:48px}
-.paper-row{width:100%;display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:6px 24px;min-height:72px;padding:20px 0;text-align:left;color:var(--muted);transition:color 200ms ease}
-.p-name{font-family:var(--display);font-size:clamp(1.5rem,1.2rem + 1.2vw,2.25rem);line-height:1.05;letter-spacing:-.015em}
-.p-meta{font-size:var(--step-small);text-align:right}
-.p-key{grid-column:1 / -1;font-size:var(--step-body);line-height:1.4;max-width:62ch}
-.paper.is-open .paper-row,.paper-row:focus-visible{color:var(--ink)}
-@media (hover:hover) and (pointer:fine){.paper-row:hover{color:var(--ink)}}
-.paper-body{padding:4px 0 48px}
-.paper-body > p{max-width:62ch}
-.paper-body > * + *{margin-top:20px}
-.paper-body{overflow:clip}
-.inline-fig{max-width:880px;background:var(--surface);border-radius:var(--r);padding:clamp(12px,2vw,28px)}
+.inline-fig{background:var(--surface);border-radius:var(--r);padding:clamp(12px,2vw,28px)}
 .inline-fig img{width:100%;border-radius:6px}
 .demo{max-width:760px}
-.p-links{display:flex;gap:24px;font-weight:500;font-size:var(--step-small)}
 
 /* the demos: one per paper, same anatomy */
 .demo{background:var(--surface);border-radius:var(--r);padding:22px 22px 20px}
@@ -125,10 +112,18 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .pub-auth{margin-top:6px;font-size:var(--step-small);color:var(--muted)}
 .pub-auth b{font-weight:600;color:var(--ink)}
 .pub-venue{margin-top:4px;font-size:var(--step-small);font-weight:500}
-.pub-links{display:flex;gap:6px;padding-top:.15em}
+.pub-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;padding-top:.15em}
 .pub-link{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;background:var(--bg);font-size:var(--step-small);font-weight:500;text-decoration:none;transition:background-color 160ms ease,transform 160ms var(--ease-out)}
-.pub-link:active{transform:scale(.97)}
-@media (hover:hover) and (pointer:fine){.pub-link:hover{background:var(--field-soft)}}
+.pub-link:active,.pub-open:active{transform:scale(.97)}
+.pub.is-key .pub-title{font-size:clamp(1.25rem,1.05rem + .7vw,1.625rem);line-height:1.18}
+.pub-key{margin-top:8px;max-width:58ch;line-height:1.45}
+.pub-open{display:inline-flex;align-items:center;min-height:34px;padding:0 16px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:var(--step-small);font-weight:500;white-space:nowrap;transition:transform 160ms var(--ease-out)}
+.pub-open[aria-expanded="true"]{background:var(--bg);color:var(--ink)}
+.pub-body{grid-column:1 / -1;margin-top:8px;background:var(--bg);border-radius:calc(var(--r) - 2px);padding:clamp(16px,2.5vw,32px);overflow:clip}
+.pub-body > * + *{margin-top:20px}
+.pub-body > p{max-width:62ch}
+.pub.is-key + .pub:not(.is-key){margin-top:12px}
+@media (hover:hover) and (pointer:fine){.pub-link:hover{background:var(--field-soft)}.pub-open[aria-expanded="false"]:hover{background:#2a340a}}
 
 /* ---- projects: one panel each, photos under their own text ---- */
 .projects .proj{margin-top:clamp(40px,5vw,64px);background:var(--surface);border-radius:var(--r);padding:clamp(24px,4vw,56px)}
@@ -249,8 +244,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (max-width:640px){
   .bar nav{display:none}
   .bar{padding:12px 16px;gap:16px}
-  .p-meta{grid-column:1 / -1;text-align:left}
-  .paper-row{grid-template-columns:1fr}
   .exp-list li{grid-template-columns:1fr;gap:6px}
   .exp-pics{grid-template-columns:1fr 1fr}
   .exp-pics figure:first-child{grid-column:1 / -1}
@@ -268,6 +261,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   .pubs-head{grid-template-columns:1fr}
   .pub{grid-template-columns:1fr;gap:10px}
   .pub-when{flex-direction:row;flex-wrap:wrap;gap:4px 14px}
+  .pub-links{justify-content:flex-start}
   .proj-pics.pair figure:last-child{aspect-ratio:4/5}
   .hero-pic{height:36svh}
   .meter{grid-template-columns:5.5rem minmax(0,1fr) 3.2rem;gap:8px}

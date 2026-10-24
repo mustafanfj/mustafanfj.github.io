@@ -9,17 +9,16 @@
 <link rel="preload" href="assets/fonts/font-gambarino-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/font-general-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/uaeu-campus.webp" as="image">
-<link rel="stylesheet" href="assets/site.css?v=12">
+<link rel="stylesheet" href="assets/site.css?v=13">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<a class="skip" href="#papers">Skip to papers</a>
+<a class="skip" href="#publications">Skip to publications</a>
 
 <header class="bar">
   <a class="wordmark" href="#top">Mustafa Al Juboori</a>
   <nav aria-label="Sections">
-    <a href="#papers">Papers</a>
     <a href="#publications">Publications</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
@@ -43,7 +42,7 @@
       <p class="interests reveal">Research interests: efficient and reliable computer vision · multimodal vision-language reasoning · agentic AI · robust perception · edge AI</p>
       <p class="statement reveal">Can we trust what a vision system sees? I build reliable and trustworthy vision systems, and run them at the edge: on drones, in farms and on coral reefs.</p>
       <div class="hero-actions reveal">
-        <a class="btn" href="#papers">See the papers</a>
+        <a class="btn" href="#publications">See the papers</a>
         <ul class="quiet-links" aria-label="Profiles">
           <li><a href="https://scholar.google.com/citations?user=BswRTRYAAAAJ&amp;hl=en">Google Scholar</a></li>
           <li><a href="https://github.com/mustafanfj">GitHub</a></li>
@@ -53,20 +52,30 @@
     </div>
   </section>
 
-  <section class="papers" id="papers" aria-labelledby="papers-h">
-    <h2 id="papers-h" class="reveal">Selected first-author journal papers</h2>
-    <p class="intro reveal">Four systems, one question: can a vision system be trusted where a wrong answer costs something? Open a paper and try its main result for yourself.</p>
-    <ol class="paper-list" role="list">
-        <li class="paper is-open">
-          <button class="paper-row" aria-expanded="true" aria-controls="p-vida" id="b-vida">
-            <span class="p-name">VIDA + PANDA</span>
-            <span class="p-meta">Crop disease · Frontiers in Plant Science, 2026</span>
-            <span class="p-key">Debate lifts the weakest model by 12.1 points; the panel vote stays put.</span>
-          </button>
-          <div class="paper-body" id="p-vida" role="region" aria-labelledby="b-vida">
+  <section class="pubs" id="publications" aria-labelledby="pubs-h">
+    <div class="pubs-head">
+      <h2 id="pubs-h" class="reveal">Publications</h2>
+      <p class="intro reveal">Ten papers, six as first author. The four first-author journal papers come first: open one to see its framework and try its main result.</p>
+    </div>
+    <div class="seg pub-filter reveal" role="radiogroup" aria-label="Filter publications" data-pubfilter>
+      <button role="radio" aria-checked="true" data-f="all">All <span>10</span></button>
+      <button role="radio" aria-checked="false" data-f="first">First author <span>6</span></button>
+      <button role="radio" aria-checked="false" data-f="out">Published and accepted <span>3</span></button>
+      <button role="radio" aria-checked="false" data-f="review">Under review <span>7</span></button>
+    </div>
+    <ol class="pub-list" role="list">
+        <li class="pub is-key" data-status="published" data-first="1">
+          <p class="pub-when"><span class="pub-status s-published">Published</span><span class="pub-year">2026 · First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title" id="t-vida">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis</p>
+            <p class="pub-key">Debate lifts the weakest model by 12.1 points; the panel vote stays put.</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, Z. Abbas, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
+            <p class="pub-venue">Frontiers in Plant Science 17</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://doi.org/10.3389/fpls.2026.1890016">Paper</a><a class="pub-link" href="https://github.com/mustafanfj/vida-panda-crop-disease">Code</a><button class="pub-open" aria-expanded="false" aria-controls="p-vida" id="o-vida">Figure and demo</button></p>
+          <div class="pub-body" id="p-vida" role="region" aria-labelledby="t-vida" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-vidapanda.webp" width="1800" height="995" loading="lazy" alt="VIDA+PANDA framework: seven agents diagnose independently, a GPT-5 judge scores them, then a selected panel debates by name with anti-sycophancy rules and weighted consensus"></figure>
             <p>Seven VLMs diagnose 1,219 crop-leaf images independently. The strongest from each family then debate by name and may change a verdict only by citing new visual evidence. Debate leaves the panel's vote unchanged but lifts its weakest member by 12.1 points.</p>
-            <p class="p-links"><a href="https://doi.org/10.3389/fpls.2026.1890016">Paper</a> <a href="https://github.com/mustafanfj/vida-panda-crop-disease">Code</a></p>
             <div class="demo" data-demo="vida">
               <div class="demo-top">
                 <p class="demo-q" id="q-vida">Let the panel debate</p>
@@ -82,16 +91,18 @@
             </div>
           </div>
         </li>
-        <li class="paper">
-          <button class="paper-row" aria-expanded="false" aria-controls="p-coral" id="b-coral">
-            <span class="p-name">CoralAgent-TRACE</span>
-            <span class="p-meta">Coral reefs · Frontiers in Marine Science, under review</span>
-            <span class="p-key">3.7 points above GPT-5 zero-shot; removing the verifier costs 12.7.</span>
-          </button>
-          <div class="paper-body" id="p-coral" role="region" aria-labelledby="b-coral" hidden>
+        <li class="pub is-key" data-status="review" data-first="1">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title" id="t-coral">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering</p>
+            <p class="pub-key">3.7 points above GPT-5 zero-shot; removing the verifier costs 12.7.</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, Z. Abbas, M. Ur Rehman</p>
+            <p class="pub-venue">Frontiers in Marine Science</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a><button class="pub-open" aria-expanded="false" aria-controls="p-coral" id="o-coral">Figure and demo</button></p>
+          <div class="pub-body" id="p-coral" role="region" aria-labelledby="t-coral" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-coralagent.webp" width="1800" height="976" loading="lazy" alt="CoralAgent-TRACE architecture: SCOPE crops the region named in the question, a GPT-5 orchestrator runs planned tools, TRACE synthesises an answer, and a Grok GUARD verifier accepts, repairs or replaces it"></figure>
             <p>An agent plans a short, question-specific sequence of tools for each reef question, and an independent verifier checks every answer against its evidence. +3.7 points over GPT-5 zero-shot on a 100-image CoralVQA development set; frozen, it answered 98.3% of 3,000 questions across 500 images.</p>
-            <p class="p-links"><a href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a></p>
             <div class="demo" data-demo="coral">
               <p class="demo-q" id="q-coral">Take one part out</p>
               <div class="seg" role="radiogroup" aria-labelledby="q-coral" data-seg="cut">
@@ -110,17 +121,18 @@
             </div>
           </div>
         </li>
-        <li class="paper">
-          <button class="paper-row" aria-expanded="false" aria-controls="p-aero" id="b-aero">
-            <span class="p-name">AeroVerify-VLM</span>
-            <span class="p-meta">Drones · IEEE OJVT, under review</span>
-            <span class="p-key">Up to +7.0 points with no fine-tuning, and it abstains when unsure.</span>
-          </button>
-          <div class="paper-body" id="p-aero" role="region" aria-labelledby="b-aero" hidden>
+        <li class="pub is-key" data-status="review" data-first="1">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title" id="t-aero">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models</p>
+            <p class="pub-key">Up to +7.0 points with no fine-tuning, and it abstains when unsure.</p>
+            <p class="pub-auth"><b>M. Al Juboori</b> et al.</p>
+            <p class="pub-venue">IEEE Open Journal of Vehicular Technology</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/AeroVerify-VLM">Code</a><button class="pub-open" aria-expanded="false" aria-controls="p-aero" id="o-aero">Figure and demo</button></p>
+          <div class="pub-body" id="p-aero" role="region" aria-labelledby="t-aero" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-aeroverify.webp" width="1800" height="899" loading="lazy" alt="AeroVerify-VLM framework: four evidence views from frozen Moondream2 and SmolVLM, reliability weights fit on DEV, and a confidence-thresholded decision on EVAL"></figure>
             <p>A frozen small VLM answers each question through four evidence sources. Reliability weights fit on a small development split decide which source to trust, and the model abstains when its calibrated confidence is low. Up to +7.0 points with no fine-tuning.</p>
-
-            <p class="p-links"><a href="https://github.com/mustafanfj/AeroVerify-VLM">Code and paper notes</a></p>
             <div class="demo" data-demo="aero">
               <div class="demo-top">
                 <p class="demo-q" id="q-aero">Let the model say “I’m not sure”</p>
@@ -141,16 +153,18 @@
             </div>
           </div>
         </li>
-        <li class="paper">
-          <button class="paper-row" aria-expanded="false" aria-controls="p-sem" id="b-sem">
-            <span class="p-name">SemUAV-VLM</span>
-            <span class="p-meta">Drones · IEEE OJVT, under review</span>
-            <span class="p-key">A 1 kB alert keeps 73% of the best image’s recall with 105× fewer bytes.</span>
-          </button>
-          <div class="paper-body" id="p-sem" role="region" aria-labelledby="b-sem" hidden>
+        <li class="pub is-key" data-status="review" data-first="1">
+          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
+          <div class="pub-main">
+            <p class="pub-title" id="t-sem">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links</p>
+            <p class="pub-key">A 1 kB alert keeps 73% of the best image’s recall with 105× fewer bytes.</p>
+            <p class="pub-auth"><b>M. Al Juboori</b>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman</p>
+            <p class="pub-venue">IEEE Open Journal of Vehicular Technology</p>
+          </div>
+          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/SemUAV-VLM">Code</a><button class="pub-open" aria-expanded="false" aria-controls="p-sem" id="o-sem">Figure and demo</button></p>
+          <div class="pub-body" id="p-sem" role="region" aria-labelledby="t-sem" hidden>
             <figure class="inline-fig"><img src="assets/img/fig-semuav.webp" width="1800" height="590" loading="lazy" alt="SemUAV-VLM pipeline: observe, ground with a detector and bounded VLM, choose the least costly representation, deliver over a constrained uplink, act at the ground receiver"></figure>
             <p>A drone sends the smallest message that still lets the ground station act in time. A 1 kB semantic alert keeps 73% of the best image's balanced recall with 105× fewer bytes, and meets its deadline on links down to 0.1 Mb/s.</p>
-            <p class="p-links"><a href="https://github.com/mustafanfj/SemUAV-VLM">Code</a></p>
             <div class="demo" data-demo="sem">
               <p class="demo-q" id="q-sem">Choose the drone’s link</p>
               <div class="seg" role="radiogroup" aria-labelledby="q-sem" data-seg="link">
@@ -167,30 +181,6 @@
               <p class="demo-note">Deadline success from the paper's transport replay over rate, delay, loss, jitter and buffer size. The image is AVIF at quality 90, quarter scale.</p>
             </div>
           </div>
-        </li>
-    </ol>
-  </section>
-
-  <section class="pubs" id="publications" aria-labelledby="pubs-h">
-    <div class="pubs-head">
-      <h2 id="pubs-h" class="reveal">All publications</h2>
-      <p class="intro reveal">Ten papers, six as first author: one published, two accepted and seven under review.</p>
-    </div>
-    <div class="seg pub-filter reveal" role="radiogroup" aria-label="Filter publications" data-pubfilter>
-      <button role="radio" aria-checked="true" data-f="all">All <span>10</span></button>
-      <button role="radio" aria-checked="false" data-f="first">First author <span>6</span></button>
-      <button role="radio" aria-checked="false" data-f="out">Published and accepted <span>3</span></button>
-      <button role="radio" aria-checked="false" data-f="review">Under review <span>7</span></button>
-    </div>
-    <ol class="pub-list" role="list" aria-live="polite">
-        <li class="pub" data-status="published" data-first="1">
-          <p class="pub-when"><span class="pub-status s-published">Published</span><span class="pub-year">2026 · First author</span></p>
-          <div class="pub-main">
-            <p class="pub-title">A multi-agent vision-language debate framework for zero-shot crop disease diagnosis</p>
-            <p class="pub-auth"><b>M. Al Juboori</b>, Z. Abbas, Z. Al Aghbari, F. Ullah, M. Ur Rehman</p>
-            <p class="pub-venue">Frontiers in Plant Science 17</p>
-          </div>
-          <p class="pub-links"><a class="pub-link" href="https://doi.org/10.3389/fpls.2026.1890016">Paper</a><a class="pub-link" href="https://github.com/mustafanfj/vida-panda-crop-disease">Code</a></p>
         </li>
         <li class="pub" data-status="accepted" data-first="1">
           <p class="pub-when"><span class="pub-status s-accepted">Accepted</span><span class="pub-year">2026 · First author</span></p>
@@ -209,33 +199,6 @@
             <p class="pub-venue">Springer ICATCICT 2026</p>
           </div>
           <p class="pub-links"></p>
-        </li>
-        <li class="pub" data-status="review" data-first="1">
-          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
-          <div class="pub-main">
-            <p class="pub-title">CoralAgent-TRACE: An evidence-grounded agentic framework for coral reef health assessment and visual question answering</p>
-            <p class="pub-auth"><b>M. Al Juboori</b>, Z. Abbas, M. Ur Rehman</p>
-            <p class="pub-venue">Frontiers in Marine Science</p>
-          </div>
-          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/CoralAgent-TRACE">Code</a></p>
-        </li>
-        <li class="pub" data-status="review" data-first="1">
-          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
-          <div class="pub-main">
-            <p class="pub-title">SemUAV-VLM: Deadline-aware semantic communication for UAV vision over constrained wireless links</p>
-            <p class="pub-auth"><b>M. Al Juboori</b>, T. Almazrouei, F. Ullah, H. El-Sayed, M. Ur Rehman</p>
-            <p class="pub-venue">IEEE Open Journal of Vehicular Technology</p>
-          </div>
-          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/SemUAV-VLM">Code</a></p>
-        </li>
-        <li class="pub" data-status="review" data-first="1">
-          <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">First author</span></p>
-          <div class="pub-main">
-            <p class="pub-title">AeroVerify-VLM: training-free, evidence-grounded visual question answering on UAV imagery with small vision-language models</p>
-            <p class="pub-auth"><b>M. Al Juboori</b> et al.</p>
-            <p class="pub-venue">IEEE Open Journal of Vehicular Technology</p>
-          </div>
-          <p class="pub-links"><a class="pub-link" href="https://github.com/mustafanfj/AeroVerify-VLM">Code</a></p>
         </li>
         <li class="pub" data-status="review" data-first="0">
           <p class="pub-when"><span class="pub-status s-review">Under review</span><span class="pub-year">Co-author</span></p>
@@ -338,9 +301,9 @@
     <ol class="exp-list" role="list">
       <li class="reveal"><p class="when">Jun 2026 – now</p><div><h3>Visiting Researcher, eBRAIN Lab, NYU Abu Dhabi</h3><p>With Prof. Muhammad Shafique. Showed that model compression nearly doubles the performance loss of lightweight perception models under adverse conditions, across six datasets and 566K+ images, and built physics- and diffusion-based synthetic data to recover it.</p>
         <div class="exp-pics">
-          <figure><img src="assets/img/nyuad-badge.webp" width="1100" height="1467" loading="lazy" alt="Mustafa's NYU researcher badge, July 2026, held up on the NYU Abu Dhabi campus"><figcaption>Researcher badge, NYU Abu Dhabi.</figcaption></figure>
-          <figure><img src="assets/img/nyuad-robots.webp" width="1100" height="1467" loading="lazy" alt="A humanoid robot, a quadruped and mobile manipulators in a robotics lab at NYU Abu Dhabi"><figcaption>Robots in the lab at NYU Abu Dhabi.</figcaption></figure>
-          <figure><img src="assets/img/nyuad-lab.webp" width="900" height="1600" loading="lazy" alt="The research floor at NYU Abu Dhabi, with desks and screens along a long corridor"><figcaption>The research floor.</figcaption></figure>
+          <figure><img style="object-position:50% 88%" src="assets/img/nyuad-badge.webp" width="1100" height="1467" loading="lazy" alt="Mustafa's NYU researcher badge, July 2026, held up on the NYU Abu Dhabi campus"><figcaption>Researcher badge, NYU Abu Dhabi.</figcaption></figure>
+          <figure><img src="assets/img/nyuad-robots.webp" width="1100" height="1467" loading="lazy" alt="Robots in the eBRAIN Lab at NYU Abu Dhabi: a humanoid, a quadruped and mobile manipulators"><figcaption>The eBRAIN Lab, NYU Abu Dhabi.</figcaption></figure>
+          <figure><img src="assets/img/nyuad-lab.webp" width="900" height="1600" loading="lazy" alt="eBRAIN Lab workstations with screens along the research floor at NYU Abu Dhabi"><figcaption>eBRAIN workstations.</figcaption></figure>
         </div></div></li>
       <li class="reveal"><p class="when">Jan 2026 – now</p><div><h3>Research Assistant, Autonomous Systems Lab, UAEU</h3><p>With Dr. Mobeen Ur Rehman. Seven papers in 2026, four as first author, on reliable vision and vision-language systems for agriculture, coral reefs and UAVs; 750,000+ AED in research funding.</p></div></li>
       <li class="reveal"><p class="when">Jun – Aug 2025</p><div><h3>Research Intern, AIRoCS Group, MBZUAI</h3><p>UGRIP 2025, with Dr. Abdalla Swikir: one of 56 interns selected from 2,000+ applicants, an acceptance rate under 3%. Learned provably safe obstacle-avoidance policies from demonstration and deployed them on a 7-DoF Franka Emika arm.</p>
@@ -418,6 +381,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=12" defer></script>
+<script src="assets/site.js?v=13" defer></script>
 </body>
 </html>

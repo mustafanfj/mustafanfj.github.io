@@ -1,40 +1,33 @@
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- selected papers: one open at a time ----------
-     The clicked title stays where it was, its body unfolds beneath it
-     (figure, then text, then the demo), then the page glides so the title
-     sits under the bar. Closing the paper above no longer yanks the view. */
-  const papers = [...document.querySelectorAll('.paper')];
+  /* ---------- the four journal papers open in place ----------
+     The row you open stays where it is while any other closes, its body
+     unfolds beneath it (figure, text, demo), then the page settles so the
+     row sits under the bar. */
+  const keys = [...document.querySelectorAll('.pub.is-key')];
   const barH = () => (document.querySelector('.bar')?.offsetHeight || 64) + 12;
   const jump = y => window.scrollTo({ top: y, behavior: 'instant' });
-  papers.forEach(p => {
-    const btn = p.querySelector('.paper-row');
-    const body = p.querySelector('.paper-body');
+  keys.forEach(p => {
+    const btn = p.querySelector('.pub-open');
+    const body = p.querySelector('.pub-body');
     btn.addEventListener('click', () => {
-      const willOpen = !p.classList.contains('is-open');
-      const before = btn.getBoundingClientRect().top;
-      papers.forEach(o => {
-        o.classList.remove('is-open');
-        o.querySelector('.paper-row').setAttribute('aria-expanded', 'false');
-        const ob = o.querySelector('.paper-body');
+      const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+      const before = p.getBoundingClientRect().top;
+      keys.forEach(o => {
+        const ob = o.querySelector('.pub-body'), obtn = o.querySelector('.pub-open');
         ob.getAnimations().forEach(an => an.cancel());
-        ob.hidden = true;
+        ob.hidden = true; obtn.setAttribute('aria-expanded', 'false'); obtn.textContent = 'Figure and demo';
       });
-      if (willOpen) {
-        p.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-        body.hidden = false;
-      }
-      // keep the title under the pointer, whatever closed above it
-      jump(window.scrollY + btn.getBoundingClientRect().top - before);
+      if (willOpen) { body.hidden = false; btn.setAttribute('aria-expanded', 'true'); btn.textContent = 'Close'; }
+      jump(window.scrollY + p.getBoundingClientRect().top - before);
       if (!willOpen) return;
       if (!reduce) {
-        const h = body.scrollHeight;
+        const h = body.offsetHeight;
         body.animate([{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }],
           { duration: Math.min(520, 240 + h / 6), easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
       }
-      const target = window.scrollY + btn.getBoundingClientRect().top - barH();
+      const target = window.scrollY + p.getBoundingClientRect().top - barH();
       if (Math.abs(target - window.scrollY) > 8) window.scrollTo({ top: target, behavior: reduce ? 'instant' : 'smooth' });
     });
   });
@@ -148,6 +141,7 @@
         const show = match(el, b.dataset.f);
         const was = !el.hidden;
         el.hidden = !show;
+        if (!show) { const bb = el.querySelector('.pub-body'); if (bb && !bb.hidden) { bb.hidden = true; const ob = el.querySelector('.pub-open'); ob.setAttribute('aria-expanded', 'false'); ob.textContent = 'Figure and demo'; } }
         if (show && !reduce) {
           el.getAnimations().forEach(an => an.cancel());
           el.animate([{ opacity: was ? .4 : 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }],
